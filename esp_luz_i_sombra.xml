@@ -1,0 +1,762 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="transf_luzisombra.xsl"?>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+  xmlns:ns2="http://www.tei-c.org/ns/Examples"
+  xmlns:ns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Edición digital de Luz i sombra de Soledad Acosta</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Usage universitaire uniquement</p>
+         </publicationStmt>
+         <sourceDesc>
+            <biblStruct>
+               <monogr>
+                     <title>Luz i sombra</title>
+                     <author>Soledad Acosta de Samper</author>
+                     <editor>Imprenta Constitucional, por N. Pontón, 1866-1868</editor>
+                     <respStmt xml:id="NGD">
+                        <name>Nataly Garzón Díaz</name>
+                        <resp>Encodage</resp>
+                  </respStmt>
+               <imprint>
+                <pubPlace>Bogotá</pubPlace>
+                <date>1866</date>
+               </imprint>
+               </monogr>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+
+      <encodingDesc>
+      <projectDesc>
+        <p>Esta edición digital fue realizada dentro del proyecto de tesis para obtenir el diploma de la maestría Humanidades Digitales - especialización ediciones digitales de la Universidad de Ruán Normandía</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>El texto de origen se conserva. Se trata de la colección del periódico impreso "El Iris".</p>
+      </editorialDecl>
+      </encodingDesc>
+
+      <profileDesc>
+        <langUsage>
+            <language ident="spa">Espagnol</language>
+        </langUsage>
+        <textClass>
+            <keywords>
+                <term>Cuento</term>
+                <term>Literatura colombiana - siglo 19</term>
+            </keywords>
+        </textClass>
+      </profileDesc>
+
+      <revisionDesc>
+        <change when="2024-10-10" who="#NGD">Creación del archivo y la codificación de los métadonnées</change>
+      </revisionDesc>
+
+  </teiHeader>
+  
+  <text>
+      <body>
+        <div type="periodicoElIris">
+          <pb n="122"/>
+          <fw type="pageNum">122</fw><fw type="header">EL IRIS</fw>
+          
+          <div type="cuento">
+            <div type="laJuventud">
+              <div type="primera_publicacion" rend="Continuará">
+              <head>
+                <l>LUZ <choice><orig>I</orig><reg>Y</reg></choice> SOMBRA.</l>
+                <l>(Cuadros de la vida de <seg corresp="#aureliana">una coqueta</seg>).</l>
+                <l>I</l>
+                  <l>LA JUVENTUD.</l>
+              </head>
+              
+                <p xml:id="p1">Brillaba <placeName key="santander" corresp="#coord_santander">Santander</placeName><geo xml:id="coord_santander">6.65877964259512, -73.53697166231863</geo> en toda su gloria
+                militar, en todo el esplendor de sus triunfos 
+                   <choice><orig>i</orig><reg>y</reg></choice> en el apojeo de su juventud <choice><orig>i</orig><reg>y</reg></choice> gallardía. 
+                <orgName key="pueblo">El pueblo</orgName> se regocijaba con su adquirida
+                  patria, <choice><orig>i</orig><reg>y</reg></choice> el gozo <choice><orig>i</orig><reg>y</reg></choice> satisfaccion
+                que causa el sentimiento de la libertad
+                noblemente conquistada se leía en todos
+                los semblantes.</p>
+                
+              <p xml:id="p2">Contaba yo de <seg corresp="#mercedes">catorce a quince años</seg>.
+                <seg corresp="#mercedes">Habia perdido a <persName key="madreDeMercedes">mi madre</persName> poco ántes</seg>, <choice><orig>i</orig><reg>y</reg></choice>
+                <seg type="rolMujer"><persName key="padreDeMercedes">mi padre</persName>, viéndome <seg corresp="#mercedes">triste</seg> <choice><orig>i</orig><reg>y</reg></choice> <seg corresp="#mercedes">abatida</seg>, quiso 
+                que acompañada por <seg corresp="#donaPrudencia">una señora respetable</seg>, 
+                visitase a <placeName key="bogota" corresp="#coord_bogota">Bogotá</placeName><geo xml:id="coord_bogota"> 4.7132921631617695, -74.08173126420829</geo>  <choice><orig>i</orig><reg>y</reg></choice> asistiese a
+                las procesiones de Semana Santa</seg>, que se
+                anunciaban particularmente solemnes
+                para ese año. En aquel tiempo <orgName key="pueblo">el pueblo</orgName>
+                confundia siempre el sentimiento relijioso 
+                con los acontecimientos políticos, <choice><orig>i</orig><reg>y</reg></choice> en
+                la Semana Santa cada cual procuraba
+                manifestarse agradecido al SEÑOR que
+                nos habia libertado del yugo de <placeName key="espana" corresp="#coord_espana">España</placeName><geo xml:id="coord_espana">40.463667, -3.749220</geo>.</p>
+              
+                <p xml:id="p3"><seg corresp="#mercedes">Triste</seg>, <seg corresp="#mercedes">desalentada</seg>, <seg corresp="#mercedes">tímida</seg> <choice><orig>i</orig><reg>y</reg></choice> <seg corresp="#mercedes">retraida</seg>
+                  llegué a casa de <orgName key="lasHernandez">las señoritas Hernández</orgName>,
+                  donde mi compañera, doña Prudencia,
+                  acostumbraba desmontarse en <placeName key="bogota">Bogotá</placeName>.
+                  <orgName key="lasHernandez">Las Hernández</orgName> eran las mujeres mas de
+                  moda<choice><orig>i</orig><reg>y</reg></choice>mas afamadas por su belleza que
+                  habia entónces, particularmente una de
+                  ellas, <persName key="aureliana">Aureliana</persName>. Llegamos el Lúnes
+                  Santo a las dos de la tarde, <choice><orig>i</orig><reg>y</reg></choice> <seg type="rolMujer"><persName key="donaPrudencia">doña Prudencia</persName>, deseosa de que yo no perdiese
+                  procesion, me obligó a vestirme, <choice><orig>i</orig><reg>y</reg></choice> casi
+                  por fuerza me llevó a un balcon de la
+                  calle real</seg> a reunirnos a <orgName key="lasHernandez">las Hernández</orgName>,
+                  que ya habian salido de casa.</p>
+              
+              <p xml:id="p4">Cuando ví los balcones llenos de jente
+                    ricamente vestida, las barandas cubiertas
+                    con fastuosas colchas, <choice><orig>i</orig><reg>y</reg></choice> me encontré en
+                    medio de una multitud de muchachas
+                    alegres <choice><orig>i</orig><reg>y</reg></choice> chanceras,—me sentí <seg corresp="#mercedes">profundamente triste </seg><choice><orig>i</orig><reg>y</reg></choice> <seg corresp="#mercedes">avergonzada</seg>, <choice><orig>i</orig><reg>y</reg></choice> hubiera
+                    querido estar en el bosque mas retirado
+                    de <placeName key="laHacienda">la hacienda de mi padre</placeName>.</p>
+                    
+              <p xml:id="p5">
+                <l>—¡Allá viene <persName key="aureliana">Aureliana</persName>! esclamó <persName key="donaPrudencia">doña Prudencia</persName>.</l>
+                <l>—¿Dónde? pregunté, <seg type="rolMujer">deseosa de conocerla; pues su <seg corresp="#aureliana">estraordinaria hermosura</seg> era el tema de todas las conversaciones</seg>.</l>
+                <l>—Aquella que viene <seg type="rolMujer" corresp="#aureliana">rodeada de varios caballeros</seg>.</l>
+                <l>—¿La que trae saya de terciopelo
+                negro con adornos azules <choice><orig>i</orig><reg>y</reg></choice> velo de encaje negro?</l>
+                <l>—No, esa es <persName key="sebastiana">Sebastiana</persName>, la hermana
+                mayor. La que viene detras con una <seg corresp="#aureliana">saya
+                de terciopelo violeta, guarniciones de
+                raso blanco <choice><orig>i</orig><reg>y</reg></choice> mantilla de encaje blanco</seg>,
+                es <persName key="aureliana">Aureliana</persName>.</l></p>
+              
+              <p xml:id="p6">¡No creo que ha habido nunca mujer
+                mas hermosa! <seg corresp="#aureliana">Un cuerpo elegante <choice><orig>i</orig><reg>y</reg></choice> gallardo, una blancura maravillosa, ojos
+                que brillaban como soles, labios divinamente formados que cubrian dientes de
+                perlas</seg>... <choice><orig>i</orig><reg>y</reg></choice> por último <seg corresp="#aureliana">sin igual donaire
+                 <choice><orig>i</orig><reg>y</reg></choice> gracia</seg>. Subió inmediatamente al balcon
+                en que yo estaba, <seg type="rolMujer" corresp="#aureliana">rodeada por <orgName key="aduladores">un grupo
+                de jóvenes</orgName> que como mariposas jiraban
+                en torno suyo</seg>. Los saludos, las sonrisas,
+                las miradas tiernas, los elojios mas apasionados eran para <persName key="aureliana">Aureliana</persName>. <seg type="rolMujer"><persName key="sebastiana">Sebastiana</persName> era tambien mui bella, 
+                pero su hermana <seg corresp="#aureliana">arrebataba <choice><orig>i</orig><reg>y</reg></choice> hacia olvidar a <orgName key="otrasMujeres">todas
+                las demas</orgName></seg></seg>. Su gracia, sus movimientos
+                elegantes, su anjelical sonrisa <choice><orig>i</orig><reg>y</reg></choice> mirada
+                ya lánguida, ya viva, alegre o sentimental, <seg corresp="#aureliana">todo en <persName key="aureliana">Aureliana</persName> encantaba</seg>.</p>
+                
+              <p xml:id="p7">Volví con <orgName key="lasHernandez">las Hernández</orgName> a su casa,
+                pero era tal la impresion que <persName key="aureliana">Aureliana</persName>
+                me habia hecho, que no podia apartar
+                mi vista de su precioso rostro. <seg type="rolMujer" corresp="#aureliana">Enseñada
+                a que jeneralmente <orgName key="otrasMujeres">las demas mujeres</orgName>
+                la mirasen con envidia</seg>, <seg corresp="#aureliana">la hermosa coqueta</seg> comprendió mi <seg corresp="#mercedes">sencilla admiracion</seg>,
+                me la agradeció, <choice><orig>i</orig><reg>y</reg></choice> llamándome a su lado,
+                me hizo mil cariños, halagándome con
+                <seg corresp="#aureliana">afectuosas palabras</seg>. <seg type="rolMujer">Al tiempo de retirarse a su cuarto me llevó consigo, diciendo que me tomaba bajo su proteccion</seg>.</p>
+
+              <p xml:id="p8">El cuarto estaba lujosamente amoblado. Sobre las mesas se veian los regalos que le habian enviado aquel dia:
+                joyas, vestidos, adornos costosos, piezas
+                de bajilla, flores naturales <choice><orig>i</orig><reg>y</reg></choice> artificiales,
+                frutas raras <choice><orig>i</orig><reg>y</reg></choice> esquisitas... En fin, allí
+                estaban los objetos mas curiosos que se
+                podian encontrar en <placeName key="bogota">Bogotá</placeName>.</p>
+
+              <p xml:id="p9">
+                <l>—¿Es hoi el cumpleaños de U? la
+                  pregunté admirada al ver tantos regalos.</l>
+                <l>—No, me contestó con <seg corresp="#aureliana">aire de triunfo</seg>.
+                <seg type="rolMujer">Mis sonrisas valen mas que todo esto que
+                me envían en cambio de ellas.</seg> <seg type="rolMujer">Cada uno
+                de los que se me han acercado hoi, al
+                comprender algun capricho mio, me han 
+                querido complacer enviando lo que deseaba.</seg></l></p>
+
+              <p xml:id="p10">Un no sé qué irónico <choice><orig>i</orig><reg>y</reg></choice> triste pasó por
+                su lindo rostro al decir estas palabras, e
+                instintivamente sentí que aquella existencia de <seg corresp="#aureliana">vanidad</seg> me repugnaba.</p>
+
+              <p xml:id="p11">Durante las dos semanas que permanecí en <placeName key="bogota">Bogotá</placeName> estuve continuamente con <persName key="aureliana">Aureliana</persName>, <choice><orig>i</orig><reg>y</reg></choice> al tiempo de despedirme ví brillar una lágrima de sentimiento
+                entre sus <seg corresp="#aureliana">crespas pestañas</seg>. Apesar de
+                los <seg corresp="#aureliana">homenajes de todos <orgName key="altosPersonajes">los altos personajes de la república</orgName></seg>, de <seg corresp="#aureliana">las fiestas que le
+                  daban</seg> <choice><orig>i</orig><reg>y</reg></choice> de <seg corresp="#aureliana">los elojios que la prodigaban</seg>,—<seg corresp="#mercedes">la humilde admiracion</seg> de <seg corresp="#mercedes">una campesina</seg> despertó en su corazon <seg corresp="#aureliana">un cariño sincero</seg>.</p>
+
+                <p xml:id="p12">Me hallaba algunos años despues en <placeName key="tocaima" corresp="#coord_tocaima">Tocaima</placeName><geo xml:id="coord_tocaima">4.458200, -74.634340</geo> con mi <seg corresp="#mercedes">padre enfermo</seg> cuando 
+                se supo que en esos dias llegarian <orgName key="lasHernandez">las
+                Hernández</orgName>. Este fué un acontecimiento
+                para todos los que estaban en <placeName key="tocaima">el pueblo</placeName>.
+                <persName key="aureliana">Aureliana</persName> se habia enfermado ¡qué calamidad! 
+                Se dijo que <persName key="presidente">el presidente</persName> le
+                  prestaria su coche para atravesar <placeName key="laSabana" corresp="#coord_laSabana">la Sabana</placeName><geo xml:id="coord_laSabana">4.716667, -74.166664</geo> <choice><orig>i</orig><reg>y</reg></choice>que los mejores caballos de <placeName key="bogota">la capital</placeName> estaban a su disposicion. En <placeName key="laMesa" corresp="#coord_laMesa">la Mesa</placeName><geo xml:id="coord_laMesa">4.632000, -74.463000</geo> le prepararon una silla de manos,
+                por si acaso preferia ese modo de viajar.
+                En fin, cuando se supo que llegaba <orgName key="laFamiliaHernandez">la
+                familia Hernández</orgName>, salieron todos <orgName key="losPrincipalesHabitantes">los
+                principales habitantes</orgName> del lugar a recibirla.</p>
+
+              <p xml:id="p13">Les habian destinado la mejor casa
+                de <placeName key="tocaima">Tocaima</placeName>, <choice><orig>i</orig><reg>y</reg></choice> cada cual envió cuanto
+                creia que la enferma pudiese necesitar.
+                Apénas supo <persName key="aureliana">Aureliana</persName> que yo estaba
+                en <placeName key="tocaima">el pueblo</placeName>, me mandó llamar con mil
+                <seg corresp="#aureliana">afectuosas espresiones</seg>. La encontré pálida, pero <seg corresp="#aureliana">bella como siempre</seg>. Aunque <seg corresp="#aureliana">la acompañaba <orgName key="otrasMujeres">una comitiva bastante
+                  numerosa de jóvenes <choice><orig>i</orig><reg>y</reg></choice> amigas de <placeName key="bogota">Bogotá</placeName></orgName></seg>,
+                gustaba mucho de mi compañía <choice><orig>i</orig><reg>y</reg></choice> pasábamos una gran parte del día juntas.</p>
+
+              <p xml:id="p14">Una noche dieron en <placeName key="tocaima">el pueblo</placeName> un
+                baile para festejar la reposicion de Aureliana; pero ella al tiempo de salir, dijo
+                que <seg corresp="#aureliana">no se sentia bastante fuerte para
+                concurrir al baile <choice><orig>i</orig><reg>y</reg></choice> que permanecería en
+                casa</seg>; <choice><orig>i</orig><reg>y</reg></choice> en efecto, me envió a llamar para
+                que la acompañase aquella noche.</p>
+
+                <p xml:id="p15">La hallé <seg corresp="#aureliana">sola</seg> en un cuartito que habian arreglado para ella con lo mejor
+                  que se encontró en el lugar. Una esperma puesta detras de una pantalla esparcia su luz suave por la pieza, <choice><orig>i</orig><reg>y</reg></choice> en medio de las sombras se destacaba la aérea figura de Aureliana, que ataviada caprichosamente con un vestido popular, dejaba descubiertos sus <seg corresp="#aureliana">brazos torneados</seg> i
+                ocultaba en parte sus espaldas bajo un
+                  <hi rend="italique">paño</hi> de linon blanco. Estaba recostada
+                en una hamaca <choice><orig>i</orig><reg>y</reg></choice> apoyando la cabeza
+                sobre el brazo doblado, con la otra mano
+                acariciaba las <seg corresp="#aureliana">largas trenzas de cabello
+                rubio que hacian contraste con sus rasgados ojos negros <choice><orig>i</orig><reg>y</reg></choice> brillantes</seg>.</p>
+
+              <p xml:id="p16">
+                <l>—¡Bien venida, <persName key="mercedes">Mercedes</persName>! dijo lánguidamente al verme. <persName key="madreDeAureliana">Mi madre</persName> <choice><orig>i</orig><reg>y</reg></choice> <orgName key="hermanasDeAureliana">mis
+                hermanas</orgName> se fueron al baile, <choice><orig>i</orig><reg>y</reg></choice> no las
+                acompañé porque estoi demasiado fastidiada para pensar en diversiones.</l>
+                <l>—¡U. fastidiada! esclamé.</l>
+                <l>—I, ¿por qué no? ¿Acaso no se encuentra siempre hiel en toda copa de dicha que apuramos hasta el fondo?</l>
+                <l>—Qué poetica está U. esta noche.</l>
+                <l>—No soi yo,-esa frase me la enseñó
+                <persName key="gabriel">Gabriel</persName> el literato, uno de mis adoradores.</l>
+                <l>—Pero no deberia U. ni en chanza
+                quejarse de su suerte.</l>
+                <l>—Yo no me quejo. He obtenido de
+                los demas cuanto he querido... pero...</l>
+                <l>—¡Cómo! esclamé ¿No le basta aún
+                tanta adoracion, tanto amor como el que
+                la rodea?</l>
+                <l>—Siéntate a mi lado, <persName key="mercedes">Mercedes</persName>, me
+                dijo, tuteándome, de repente: no sé por
+                qué tengo por tí tanta predileccion; i
+                añadió en voz baja,-será tal vez porque
+                eres la única mujer (no esceptuo a <orgName key="hermanasDeAureliana">mis
+                hermanas</orgName>) que no se ha mostrado envidiosa de mí... ¡Ah! esclamó un momento despues con tristeza, ¡cuán poco
+                fundamento tienen para ello!</l>
+              </p>
+              
+              <p xml:id="p17">
+                Yo no sabia qué contestarle <choice><orig>i</orig><reg>y</reg></choice> guardé
+silencio.</p>
+              
+              <p xml:id="p18">
+                <l>-Dime, añadió, ¿sabes lo que es amar?</l></p>
+              
+              <p xml:id="p19">
+                Bajé los ojos sin contestar: sabia lo
+                que era amar, pero ese sentimiento lo
+                guardaba en mi corazon como un secreto.</p>
+              <p xml:id="p20">
+              <l>—¿No me contestas...? No es una pregunta vana, ni una curiosidad mujeril. Deseo saber la verdad... Quisiera comprender lo que hai en otro corazon...</l>
+              <l>—Hace dos años, contesté, que estoi
+              comprometida a casarme, <choice><orig>i</orig><reg>y</reg></choice> nunca me ha
+              pesado. Eso le bastará para comprender
+              que sé lo que es amar.</l>
+              <l>—Eres mas feliz que yo entónces, repuso, apoyando su mano afectuosamente sobre la mia. Yo nunca he podido amar verdaderamente. Esa es la herida secreta de mi alma. Tengo cerca de treinta años
+              i, ¡no sé lo que es amar con el corazon, con abnegacion, con ternura! Mi vanidad ha sido halagada mil veces: mi imajinacion se ha entusiasmado; pero mi corazon no ha sabido, no ha podido amar sinceramente. Nunca me ha ocurrido olvidarlo todo por el objeto amado: nunca
+              he encontrado tranquilidad ni completa
+              dicha al lado de <hi rend="italique">uno</hi> solo. Me dicen que
+              amar es vivir pensando siempre en el ser
+              predilecto, asociándolo a todo los momentos de nuestra vida, siendo su nombre la primer palabra al despertar, i
+              siendo <hi rend="italique">él</hi> nuestro último pensamiento al
+              dormirnos... Amar debe de ser vivir
+              en un mundo aparte sintiendo conmociones inefables de suprema ternura... Dime ¿es así como amas?</l>
+              <l>—Ha descrito U. mis mas íntimos
+              sentimientos. Pero, añadí, amar es tambien sufrir. ¿No es U. mas feliz con su tranquilidad?</l>
+              <l>—No, hija mia: hai mas dicha en
+              amar que en ser amado, me ha dicho
+              muchas veces <persName key="vicente">Vicente</persName> el poeta, <choice><orig>i</orig><reg>y</reg></choice> lo creo.
+              Tenia yo apénas catorce años cuando
+              por primera vez comprendí que mi belleza inspiraba amor <choice><orig>i</orig><reg>y</reg></choice> avasallaba. Encantada, creí corresponder durante algunos dias ¡pobre <persName key="mariano">Mariano</persName>! La ilusion pasó al momento que otro de mejor presencia se me acercó. Creí haberme equivocado en mi primer afecto <choice><orig>i</orig><reg>y</reg></choice> lo rechacé para acojer al segundo.—Pero sucedió
+              lo mismo con este <choice><orig>i</orig><reg>y</reg></choice> los demas. Para entónces sabia el precio de mi palabra mas insignificante, de mis miradas mas vagas
+              i, te lo confieso, me hice coqueta con el
+              corazon vacío <choice><orig>i</orig><reg>y</reg></choice> la imajinacion ardiente—La sociedad entera estaba a mis pies: ninguna mujer podia competir conmigo.
+              Las palabras de adoracion que oia no
+              causaban ninguna impresion en mi corazon: las recibia con frialdad, pero las contestaba con finjida ternura.</l>
+              (Continuará).</p>
+                <signed>ALDEBARÁN</signed>
+            </div>
+        
+              <div type="segunda_publicacion" rend="Concluirá">
+              <head>
+                <l>LUZ <choice><orig>I</orig><reg>Y</reg></choice> SOMBRA.</l>
+                <l>(Continuacion).</l>
+              </head>
+              
+              <p xml:id="p21">Instintivamente me aparté del lado
+            de <persName key="aureliana">Aureliana</persName>. Esta mujer tan fria <choice><orig>i</orig><reg>y</reg></choice> tan
+            hermosa me horrorizaba. Su corazon
+            parecia una de aquellas cumbres nevadas
+            a cuyo ápice nunca han logrado llegar
+            los viajeros.</p>
+            
+              <p xml:id="p22">
+              —Una vez, continuó, sin cuidarse de
+              mi movimiento de repulsion,—una vez
+              comprendí que en <orgName key="aduladores">el círculo de admiradores</orgName> 
+              que me rodeaba habia un jóven
+              que criticaba mi modo de ser <choice><orig>i</orig><reg>y</reg></choice> que no
+              sentia por mí ninguna admiracion. Esto
+              me chocó al principio <choice><orig>i</orig><reg>y</reg></choice> me dolió al fin.
+              <persName key="fernando">Fernando</persName>, así se llamaba, se manifestaba 
+              siempre sério <choice><orig>i</orig><reg>y</reg></choice> severo conmigo <choice><orig>i</orig><reg>y</reg></choice> aun
+              a veces tuvo la audacia de censurarme.
+              Su frialdad delante de mí <choice><orig>i</orig><reg>y</reg></choice> sus improbaciones me causaron tanto disgusto, que
+              decidí conquistarlo a todo trance. Sin
+              manifestárselo claramente desplegué para 
+              él todos mis artes mostrándome tan
+              afectuosa, que pronto ví que le habian
+              hecho mella mis atenciones; pero aunque 
+              sus modales eran los de un hombre
+              galante, no se manifestaba enamorado.
+              Si no lo venzo, pensé, es un hombre superior 
+              <choice><orig>i</orig><reg>y</reg></choice> digno de un afecto verdadero.
+              Sinembargo, <persName key="fernando">Fernando</persName> no buscaba mi
+              sociedad con preferencia, aunque ya no
+              me censuraba como ántes; <choice><orig>i</orig><reg>y</reg></choice> afectaba hablar 
+              delante de mí de la belleza de otras
+              mujeres. Desgraciadamente mi carácter
+              no es constante, <choice><orig>i</orig><reg>y</reg></choice> mi entusiasmo que
+              solo dura un momento, cede ante
+              cualquier dificultad. No hubiera querido 
+              verlo a mis piés, pero no consentia
+              mi amor propio que admirara a <orgName key="otrasMujeres">otras
+              mujeres</orgName>. Miéntras tanto nuevas conquistas
+              <choice><orig>i</orig><reg>y</reg></choice> diversiones ocuparon mi pensamiento
+              <choice><orig>i</orig><reg>y</reg></choice> olvidé el noble propósito, apénas formado, 
+              de gozar con un amor secreto
+              aunque no fuera correspondido.
+              —¡Qué carácter tan estraño tiene U.!
+              pero continúe ¿qué se hizo <persName key="fernando">Fernando</persName>?
+              —Lo vas a oír. Hace algunos meses
+              <persName key="elLibertador">el Libertador</persName> dió un baile en una quinta
+              en los alrededores de <placeName key="bogota">Bogotá</placeName>. La noche
+              estaba lindísima <choice><orig>i</orig><reg>y</reg></choice> la luna iluminaba los
+              jardines. Fatigada del ruido <choice><orig>i</orig><reg>y</reg></choice> deseosa de
+              encontrarme sola para leer una carta
+              que se me habia entregado misteriosamente, 
+              me escapé de la casa sin ser vista, 
+              <choice><orig>i</orig><reg>y</reg></choice> me dirijí hácia un pabellon situado
+              en el fondo del jardin, en donde sabia
+              que hallaria luz <choice><orig>i</orig><reg>y</reg></choice> soledad. Envuelta en
+              un grueso pañolon que me escudaba del
+              frio de la noche, atravesé prestamente el
+              jardin <choice><orig>i</orig><reg>y</reg></choice> tomé una senda sombreada por
+              arbustos, <choice><orig>i</orig><reg>y</reg></choice> cortada por un riachuelo que
+              bajaba resonante del vecino cerro. El
+              contraste del ruido, las luces, la armonía
+              <choice><orig>i</orig><reg>y</reg></choice> la ajitacion de un baile con el tranquilo 
+              paisaje que atravesaba, me predispuso
+              a una melancolía vaga mui estraña a mi
+              carácter. Una lámpara colgada del techo
+              iluminaba el pabellon: al llegar a él me
+              dejé caer sobre un sofá <choice><orig>i</orig><reg>y</reg></choice> se me escapó
+              un suspiro. Otro suspiro hizo eco a mi
+              lado, <choice><orig>i</orig><reg>y</reg></choice> volviéndome hacia la puerta ví
+              que un caballero estaba ahí en pié. Disgustada 
+              del espionaje impertinente iba a
+              reconvenir al que habia interrumpido mi
+              soledad,cuando este desembozándose descubrió 
+              la pálida e interesante fisonomía
+              de <persName key="fernando">Fernando</persName>.</p>   
+            
+            <p xml:id="p23">
+            —<persName key="fernando">Fernando</persName>, dije, ¿es U.?
+            —Tiene U. razon de admirarse,<persName key="aureliana">Aureliana</persName>: 
+            no debia hallarme aquí, dijo; i
+            tomándome la mano, que instintivamente
+            le alargaba, imprimió sus labios en ella.
+            —¿Para qué luchar mas? añadió sentándose 
+            a mi lado. ¿Para qué finjir despego cuando 
+            no puedo ménos que adorarla?</p>
+              
+              <p xml:id="p24">No sé si el corazon de <orgName key="otrasMujeres">todas las mujeres</orgName> 
+            es igual al mio; pero en vez de
+            sentirme dichosa con mi ántes anhelada
+            conquista, mi corazon permaneció tranquilo 
+            e indiferente. La desilusion mas
+            profunda se apoderó de mí al comprender 
+            que no era capaz de amar al único
+            hombre que tanto habia admirado; <choice><orig>i</orig><reg>y</reg></choice> en
+            lugar de contestarle como hubiera hecho
+            a otro cualquiera, bajé la cabeza en silencio 
+            <choice><orig>i</orig><reg>y</reg></choice> con amargura pensaba que todos
+            los hombres son iguales puesto que basta
+            lisonjear su vanidad para verlos rendidos.</p>
+            
+              <p xml:id="p25"><persName key="fernando">Fernando</persName> me refirió entónces la historia 
+            de su amor. Me confesó que cuando
+            me había conocido, primero sintió hácia
+            mí cierta repulsion <choice><orig>i</orig><reg>y</reg></choice> odio, <choice><orig>i</orig><reg>y</reg></choice> miraba con 
+            desden a todos los que se me humillaban;
+            pero que el deseo que le manifesté de
+            oír sus consejos <choice><orig>i</orig><reg>y</reg></choice> de agradarle, en lugar
+            de resentirme por sus censuras, le habia
+            sorprendido <choice><orig>i</orig><reg>y</reg></choice> poco a poco su odio fué
+            cambiándose en un afecto verdadero que
+            se convirtió en amor violento. Disgustado 
+            <choice><orig>i</orig><reg>y</reg></choice> humillado al comprender que no tenia 
+            fuerza para defenderse, habia luchado
+            largo tiempo para vencer su inclinacion,
+            <choice><orig>i</orig><reg>y</reg></choice> al fin determinó huir de mí <choice><orig>i</orig><reg>y</reg></choice> me habia
+            hecho entregar sijilosamente una carta
+            aquella noche. Era una tierna despedida.</p> 
+            
+              <p  xml:id="p26">Logré que <persName key="fernando">Fernando</persName> no partiera. Deseaba 
+            despertar en mi corazon aquel interes 
+            que habia creido sentir por él en
+            un tiempo. ¡Amar debe de ser tan bello!
+            Pronto el mismo <persName key="fernando">Fernando</persName> descubrió
+            que yo misma procuraba engañarme i
+            que nunca podia amarle. Sentia sinembargo 
+            perder un corazon tan noble <choice><orig>i</orig><reg>y</reg></choice> quise
+            convencerle de que le amaba, pero él no
+            se engañó, <choice><orig>i</orig><reg>y</reg></choice> se despidió de mí resignado i
+            triste, bien que sin sin manifestarse herido en
+            su amor propio. Hace un mes supe que habia 
+            muerto en <placeName key="cartagena" corresp="#coord_cartagena">Cartajena</placeName><geo xml:id="coord_cartagena">10.399720, -75.514440</geo> en un duelo por
+            causa mia, defendiéndome de las calumnias 
+            que propagaba contra mí <persName key="unOficial">un oficial</persName>
+            a quien habia desdeñado. Esta muerte
+            me causa a veces remordimientos. Pero, ¿qué culpa tengo si no le podia amar?
+            Nunca le dije que no le correspondia....</p>       
+            
+              <p xml:id="p27">
+            —En eso estuvo el error.
+            —Tal vez; pues me decia que mis miradas 
+            <choice><orig>i</orig><reg>y</reg></choice> mis espresiones de cariño le habian 
+            hecho concebir esperanzas, <choice><orig>i</orig><reg>y</reg></choice> creia
+            por momentos que no lo miraba con indiferencia. 
+            Sin esa idea jamas me hubiera amado.
+            —¡Pobre jóven! esclamé; desventurado el que la ame a U.
+            —No digas eso, contestó <persName key="aureliana">Aureliana</persName>
+            con amargura. El que ama está recompensado 
+            con el grato sentimiento que lo
+            anima. Algunas veces me he sentido
+            inspirada por ráfagas, desgraciadamente
+            pasajeras, de una ternura que me ha henchido 
+            el corazon, ennoblecido el alma i
+            llenándome de bellos pensamientos. Pero, 
+            ¡cuán cortos han sido esos instantes! He
+            pasado mis dias buscando con ahinco el
+            amor, único objeto de la vida de una
+            mujer, pero en su lugar solo he hallado
+            desengaños <choice><orig>i</orig><reg>y</reg></choice> vacío. No creas que la coquetería 
+            que me tachan quizás con razon,
+            es el fruto de un corazon pervertido; no
+            lo creas: es que busco en todas partes
+            un ideal que huye de mí incesantemente.</p>
+            
+              <p xml:id="p28">>El lenguaje escojido, aunque sin verdadera 
+            profundidad de ideas que distinguia 
+            a <persName key="aureliana">Aureliana</persName>, la hacia en estremo
+            agradable, pero no sabia hablar con elocuencia 
+            sino de si misma.</p>
+            
+              <p xml:id="p29">De vez en cuando llegaba hasta nuestros 
+            oidos el eco lejano de la música del
+            baile a que <persName key="aureliana">Aureliana</persName> habia rehusado
+            concurrir. Sacó su reló (objeto raro en
+            aquel tiempo) que pendia de una gruesa
+            cadena que llevaba al cuello. Eran las
+            doce de la noche.</p>
+            
+              <p xml:id="p30">
+            —Esta noche no podré dormir, dijo
+            suspirando. La conversacion que hemos
+            tenido me ha causado suma tristeza <choice><orig>i</orig><reg>y</reg></choice> me
+            ha recordado escenas que quisiera olvidar. 
+            <persName key="fernando">Fernando</persName> no es el único que se ha
+            perdido por causa mia.</p>
+            
+              <p xml:id="p31">¡Qué alegres <choice><orig>i</orig><reg>y</reg></choice> triunfantes estarán
+            <orgName key="hermanasDeAureliana">mis hermanas</orgName> <choice><orig>i</orig><reg>y</reg></choice> <orgName key="amigasDeAureliana">mis amigas</orgName> sin mi presencia 
+            esta noche! esclamó un momento
+            despues, poniéndose en pié <choice><orig>i</orig><reg>y</reg></choice> mirándose-
+            en un espejo que tenia a la cabecera de
+            su cama. Mejor hubiera sido emplear
+            nuestro tiempo en el baile. ¿Quieres
+            ir? ¡Qué! añadió, viendo la seriedad con
+            que acojia una propuesta tan descabellada, 
+            ¡qué! ¿Te has impresionado con mi
+            charla sentimental? ¡Bah! eso es pasajero. 
+            ¡Ven al baile!</p>
+            
+              <p xml:id="p32">
+            —¿Yo presentarme a esta hora? Imposible.
+            —Mandarémos llamar quien nos acompañe.
+            —No puedo, no quiero. Perdóneme
+            U, pero...
+            —No te quiero obligar, me contestó.
+            Yo iré, mi sistema consiste en no dejarme 
+            llevar nunca por la tristeza, <choice><orig>i</orig><reg>y</reg></choice> a todo
+            trance combatirla.</p>
+            
+              <p xml:id="p33">No quiso ponerse adorno ninguno. Soltó 
+            su rubia cabellera, se ató una cinta
+            azul al derreror de la cabeza, se envolvió 
+            graciosamente en un sehal del mismo
+            color, <choice><orig>i</orig><reg>y</reg></choice> llamando a <persName key="negroEsclavo">un negro esclavo</persName> le
+            mandó que llamase quien la fuera a
+            acompañar al baile.</p>
+            
+              <p xml:id="p34">Mientras llegaban los amartelados ansiosos 
+            de obedecer su órden, me hizo
+            acostar en su cama <choice><orig>i</orig><reg>y</reg></choice> se despidió afectuosamente 
+            de mí al partir. Quedéme aterrada con las revelaciones que me habia
+            hecho <choice><orig>i</orig><reg>y</reg></choice> admirada de los caprichos de
+            aquella mujer tan estraña i... tan infeliz.</p>
+              
+              <p xml:id="p35">Al cabo de pocos dias <orgName key="laFamiliaHernandez">la familia Hernández</orgName> 
+              regresó a <placeName key="bogota">Bogotá</placeName>; <choice><orig>i</orig><reg>y</reg></choice> se pasaron
+              cerca de treinta años sin que volviese
+              a ver a <persName key="aureliana">Aureliana</persName> ni tener de ella sino
+              vagas noticias de que no hice caso.
+              (Concluirá.)</p> 
+              
+                <signed>ALDEBARÁN.</signed>
+            </div>
+            </div>
+            
+            <div type="laVejez">
+              <div type="tercera_publicacion" rend="Fin">
+              <head>
+                <l>LUZ <choice><orig>I</orig><reg>Y</reg></choice> SOMBRA</l>
+                <l>(Conclusion)</l>
+                <l>II.</l>
+                <l>LA VEJEZ.</l>
+              </head>
+                
+                <p xml:id="p36">Yo me casé, mis hijos crecieron <choice><orig>i</orig><reg>y</reg></choice> a su 
+                vez me rodearon de nietos.</p>
+                
+                <p xml:id="p37">Veia mi juventud en lontananza, como un sueño que pasó; pero estaba 
+                satisfecha con mi humilde suerte.</p>  
+                
+                <p xml:id="p38">Descansaba una tarde sentada a la 
+                puerta de mi casa. El día había sido 
+                mui caluroso haciendo apetecible la sombra 
+                de los árboles que refrescaba mi alegre 
+                habitacion. De repente veo salir de 
+                la posada del pueblo a una señora anciana, 
+                inclinada por la edad <choice><orig>i</orig><reg>y</reg></choice> las dolencias i
+                apoyándose en el brazo de un negro viejo. 
+                Despues de vacilar un momento i
+                siguiendo la direccion que <persName key="negroEsclavo">el negro</persName> le 
+                indicó, se dirijió hacia mí con suma lentitud 
+                <choice><orig>i</orig><reg>y</reg></choice> trabajo.</p>
+                
+                <p xml:id="p39">Al llegar al sitio en que yo estaba, se 
+                detuvo <choice><orig>i</orig><reg>y</reg></choice> con voz apagada <choice><orig>i</orig><reg>y</reg></choice> triste me dijo:</p>
+                
+                <p xml:id="p40">
+                —¿Me conoces <persName key="mercedes">Mercedes</persName>?
+                —No, no recuerdo...
+                —Pero, ¿Tal vez no habrás olvidado a 
+                <persName key="aureliana">Aureliana Hernández</persName>? ¿No es cierto?
+                —¡La señora <persName key="aureliana">Aureliana</persName>! ¿Acaso...?                —¡Soi yo!</p>
+                
+                <p xml:id="p41">La miré llena de asombro. No le había 
+                quedado la menor señal de su singular 
+                belleza. Parecia tener más de setenta 
+                años: la cútis ajada por los afeites, <choice><orig>i</orig><reg>y</reg></choice> 
+                acaso tambien por los sufrimientos, estaba 
+                arrugada <choice><orig>i</orig><reg>y</reg></choice> amarillenta : los ojos, tan 
+                brillantes en la juventud, ahora turbios 
+                <choice><orig>i</orig><reg>y</reg></choice> enrojecidos : el cuerpo agoviado <choice><orig>i</orig><reg>y</reg></choice> el 
+                andar lento <choice><orig>i</orig><reg>y</reg></choice> trabajoso, indicaban que 
+                las penas de una larga enfermedad la 
+                habian envejecido aun mas que el trascurso 
+                de los años.</p> 
+                
+                <p xml:id="p42">Inmediatamente la hice entrar <choice><orig>i</orig><reg>y</reg></choice> recordando 
+                el cariño que me tuvo en otro 
+                tiempo, la prodigué cuantos cuidados pude, 
+                procurando hacerla olvidar el aislamiento 
+                en que la encontraba. No me 
+                atrevia a preguntarle por su familia que 
+                abandonaba así en la vejez a mujer 
+                que habia sido tan contemplada en su 
+                juventud.</p>
+                
+                <p xml:id="p43">Indagando el motivo que la habia 
+                traido a <placeName key="lugarOculto">***</placeName> me contestó :</p>
+                
+                <p xml:id="p44">—Mis enfermedades, <choice><orig>i</orig><reg>y</reg></choice> la órden de <orgName key="medicos">los 
+                médicos</orgName>.
+                —I, ¿la familia de U. está en <placeName key="bogota">Bogotá</placeName>?
+                —Sí. Allí están todos.
+                —¿I <persName key="hijaDeAureliana">la hija</persName> de U. por qué no la 
+                acompaña?
+                —La pobre, dijo con una sonrisa de 
+                resignacion,—está en vísperas de casarse 
+                <choice><orig>i</orig><reg>y</reg></choice> no era justo que abandonase a su novio 
+                para venirse al lado de una inválida como yo.
+                —I, ¿<persName key="esposoDeAureliana">el señor N***</persName> su esposo?
+                —<seg corresp="#esposoDeAureliana">El clima cálido le hace daño</seg>.
+                —I, ¿<orgName key="hijosVaronesDeAureliana">sus dos hijos</orgName>...?
+                —<seg corresp="#hijosVaronesDeAureliana">Sus negocios les impiden salir al 
+                campo</seg>. Pero vino acompañándome <persName key="negroEsclavo">el
+                negro</persName>, <persName key="negroEsclavo">el mismo esclavo</persName> que conocerias 
+                en casa, <choice><orig>i</orig><reg>y</reg></choice> el único que comprende <choice><orig>i</orig><reg>y</reg></choice> soporta 
+                mis caprichos. Él nunca me ha 
+                querido abandonar apesar de ser ya libre.</p>
+                
+                <p xml:id="p45"><persName key="negroEsclavo">Un antiguo esclavo fiel</persName> era el único <choice><orig>i</orig><reg>y</reg></choice> 
+                el último apoyo que le había quedado a 
+                aquella mujer tan festejada. Se me apretaba 
+                el corazon al oirla, <choice><orig>i</orig><reg>y</reg></choice> se me arrasaron 
+                los ojos de lágrimas al contemplar 
+                una vejez tan triste despues de una juventud 
+                tan brillante.</p>
+                
+                <p xml:id="p46"><persName key="aureliana">Aureliana</persName> permaneció un mes en mi 
+                casa, atendida, me dijo, como no se veia 
+                hacia mucho tiempo. En las largas conversaciones 
+                que tuvimos comprendí que 
+                la segunda parte de su vida habia sido 
+                una terrible espiacion de la loca vanidad 
+                de la primera. Poco a poco me fue descubriendo 
+                los secretos mas dolorosos de 
+                su vida.</p>
+                
+                <p xml:id="p47">Casada hácia el fin de su juventud 
+                  con <seg corresp="#esposoDeAureliana">un hombre a quien ella no amaba</seg>, <choice><orig>i</orig><reg>y</reg></choice> 
+                  de quien <seg corresp="#aureliana">no era amada</seg>,—pronto descubrió 
+                que <seg corresp="#esposoDeAureliana">él solo habia querido especular 
+                con su riqueza</seg>, <choice><orig>i</orig><reg>y</reg></choice> <seg corresp="#aureliana">notó con terror que su 
+                belleza desaparecia paso a paso</seg>. <seg corresp="#aureliana">Sin educacion 
+                esmerada, sin instruccion ninguna, 
+                al perder esa hermosura que era su 
+                único atractivo, <orgName key="aduladores">los admiradores</orgName> fueron
+                abandonándola sucesivamente. Veía con 
+                afan que su presencia no causaba ya emocion 
+                <choice><orig>i</orig><reg>y</reg></choice> que las miradas de los concurrentes 
+                a las fiestas a que asistia no se fijaban 
+                en ella. Deseosa entónces de abandonar 
+                el teatro de sus primeros triunfos</seg>, 
+                acompañó a <persName key="esposoDeAureliana">su esposo</persName> con gusto a los 
+                  <placeName key="estadosUnidos" corresp="#coord_estadosUnidos">Estados Unidos</placeName><geo xml:id="coord_estadosUnidos">38.000000, -97.000000</geo>. Pero allí se vió aun 
+                mas desdeñada. <seg corresp="#aureliana">Desesperada procuró 
+                hacer mil esfuerzos para recuperar su 
+                perdida hermosura, <choice><orig>i</orig><reg>y</reg></choice> pasaba largas horas
+                delante de su espejo adornándose con todo 
+                el arte que una esperiencia consumada 
+                le había enseñado</seg>. Ocasion hubo en 
+                que su espejo le hacia ver de nuevo la 
+                <persName key="aureliana">Aureliana</persName> de su juventud, <choice><orig>i</orig><reg>y</reg></choice> llena de ilusiones 
+                y colmada de esperanzas se presentaba 
+                en las fiestas <choice><orig>i</orig><reg>y</reg></choice> en los bailes,—pero, 
+                ¡<orgName key="otrosEnGeneral">los demas</orgName> la miraban como se mira a 
+                  <seg corresp="#aureliana">una ruina blanqueada <choice><orig>i</orig><reg>y</reg></choice> pintada</seg>! <orgName key="otrasMujeres">Otras</orgName>, 
+                no mui bellas pero mas jóvenes, se llevaban la palma.</p>
+                
+                <p xml:id="p48">¡<seg corresp="#aureliana">Cuántos <choice><orig>i</orig><reg>y</reg></choice> cuán crueles desengaños 
+                tendria aquella pobre mujer, que habia 
+                fincado su vida en sus atractivos personales! 
+                Sufria momentos de postracion 
+                en que pedia a Dios la muerte mas bien 
+                que dejar de ser admirada</seg>.</p>
+                
+                <p xml:id="p49"><seg corresp="#aureliana">En esas luchas, en este afan pasó algunos 
+                años ántes de llegar a persuadirse 
+                de la inutilidad de sus esfuerzos. Las 
+                aguas, los polvos <choice><orig>i</orig><reg>y</reg></choice> los cosméticos con 
+                que procuró hacer revivir su perdida 
+                frescura aniquilaron los restos de su colorido 
+                <choice><orig>i</orig><reg>y</reg></choice> mancharon lo albo de su tez; las 
+                enfermedades apagaron ántes de tiempo 
+                el brillo de sus ojos <choice><orig>i</orig><reg>y</reg></choice> destruyeron su
+                hermosa cabellera, <choice><orig>i</orig><reg>y</reg></choice> por añadidura las 
+                lágrimas, los desengaños <choice><orig>i</orig><reg>y</reg></choice> las penas domésticas 
+                acabaron con el último resto 
+                de su singular belleza</seg>.</p>
+                
+                <p xml:id="p50">Durante la niñez de <orgName key="hijosEhijaDeAureliana">sus hijos</orgName> estos se 
+                habían visto <seg corresp="#hijosEHijaDeAureliana">abandonados por <seg corresp="#aureliana"><persName key="aureliana">la madre</persName></seg>, 
+                que perseguia sus últimos triunfos</seg>; <choice><orig>i</orig><reg>y</reg></choice> así 
+                perdió ese primer cariño filial tan puro 
+                <choice><orig>i</orig><reg>y</reg></choice> tan bello. Por otra parte, <seg corresp="#esposoDeAureliana">las palabras 
+                desdeñosas del <persName key="esposoDeAureliana">señor N***</persName> habían hecho 
+                nacer en el corazon de <orgName key="hijosEhijaDeAureliana">esos niños</orgName> un sentimiento 
+                de completa indiferencia hácia 
+                <persName key="aureliana">su madre</persName> desamada y poco respetada</seg>.</p>
+               
+                <p xml:id="p51">Cuando al fin <persName key="aureliana">Aureliana</persName> <seg corresp="#aureliana">se convenció 
+               de que habian pasado los últimos arreboles 
+               de vanidad mundana, se volvió hácia 
+               <orgName key="hijosEhijaDeAureliana">sus hijos</orgName></seg>; pero estos <seg corresp="#hijosEhijaDeAureliana">recibieron con 
+               disgusto sus espresiones de cariño, creyeron 
+               que era uno de los muchos caprichos 
+               pasajeros de que <persName key="esposoDeAureliana">su padre</persName> la acusaba 
+               diariamente, <choice><orig>i</orig><reg>y</reg></choice> llenos de frialdad no la 
+               hicieron caso</seg>.</p>
+               
+                <p xml:id="p52"><persName key="aureliana">Aureliana</persName> era, en efecto, <seg corresp="#aureliana">impertinente 
+               <choice><orig>i</orig><reg>y</reg></choice> caprichosa, resultado natural e 
+               infalible de su mala educacion <choice><orig>i</orig><reg>y</reg></choice> de la 
+               vida que habia llevado en su juventud. 
+               Para consolarse de sus desgracias presentes, 
+               no dejaba de hablar de su antigua 
+               belleza <choice><orig>i</orig><reg>y</reg></choice> de los triunfos de su juventud, 
+               añadiendo así al vacío de ideas la 
+               locuacidad ridícula, <choice><orig>i</orig><reg>y</reg></choice> la ruina de su carácter 
+               de madre a la ruina de su belleza 
+               de cortesana</seg>.</p> 
+               
+                <p xml:id="p53"><seg corresp="#aureliana">Continuamente enferma, <orgName key="familiaDeAureliana">su familia</orgName> la 
+               envió a que cambiase de clima, acompañada 
+               solamente por <persName key="negroEsclavo">el negro</persName>. Despues 
+               de haberse visto adorada en su juventud 
+               por <orgName key="aduladores">cuantos</orgName> se le acercaban, despues de 
+               acostumbrarse a que <orgName key="aduladores">todos</orgName> se inclinasen 
+               ante su mas leve capricho <choice><orig>i</orig><reg>y</reg></choice> que su menor 
+               indisposicion fuese una calamidad 
+               pública, ahora, cuando se encontraba 
+               realmente enferma <choice><orig>i</orig><reg>y</reg></choice> débil, se veía abandonada 
+               hasta por los que tenian el deber 
+               de procurarle comodidades</seg>.</p>
+               
+                <p xml:id="p54">No hace mucho que <seg corresp="#aureliana"><persName key="aureliana">Aureliana</persName> murió 
+                  en <placeName key="bogota">Bogotá</placeName> olvidada <choice><orig>i</orig><reg>y</reg></choice> no llorada</seg>. <seg corresp="#aureliana">En
+                    medio de sus sufrimientos</seg>, me dicen que 
+                  <seg corresp="#aureliana">todavía hablaba de sus antiguos triunfos 
+               <choice><orig>i</orig><reg>y</reg></choice> de su belleza. La vanidad <choice><orig>i</orig><reg>y</reg></choice> los mundanos 
+               recuerdos de sus primeros años la 
+               acompañaron hasta las puertas de la 
+               tumba, cuya proximidad no le sujirió un 
+               solo pensamiento sério. Murió como había 
+               vivido: sin acordarse de su alma</seg>; 
+               ¡Tal vez ignorando que la tenía!</p>
+               
+                <p xml:id="p55">------
+               Este episodio me fué referido no hace
+               mucho por <persName key="venerableMatrona">una venerable matrona</persName> de <placeName key="lugarOculto">***</placeName>
+               <choice><orig>i</orig><reg>y</reg></choice> esto me ha probado una vez mas, cuán 
+               indispensable es para la mujer una educacion 
+               esmerada <choice><orig>i</orig><reg>y</reg></choice> una instruccion sana,
+               que adorne su mente, dulcifique sus desengaños 
+               <choice><orig>i</orig><reg>y</reg></choice> le haga desdeñar las vanidades 
+               de la vida. Los comentarios <choice><orig>i</orig><reg>y</reg></choice> las
+               reflecciones son inútiles aquí : la leccion
+               se comprende solamente con referir los
+               hechos, harto verdaderos para bochorno 
+               de lo que afrancesadamente solemos llamar 
+               "sociedad de buen tono."</p>
+               <signed>ALDEBARÁN.</signed>
+                
+               </div> 
+              </div>
+            </div>
+          </div>
+       </body>
+  </text>
+</TEI>

@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+    <html xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" lang="fr">
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            
+            <title>Édition numérique de « Luz y sombra » de Soledad Acosta</title>
+            
+            <link rel="stylesheet" href="style.css">
+                        
+            <script>
+function goToConte(lang) {
+    window.location.href = "conte.html?lang=" + lang;
+}            
+</script>
+    </head>
+    <body>
+        <div>
+            <ul id="nav">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="conte.html">Luz y sombra</a></li>
+                <li><a href="versionescomparadas.html">Version bilingue comparée</a></li>
+                <li><a href="mujer.html">Personnages par genre</a></li>
+                <li><a href="manuscrit.html">Manuscrit et sources</a></li>
+                <li><a href="references.html">Références complémentaires</a></li>
+                <li><a href="credits.html">Crédits</a></li>
+            </ul>
+        </div>
+        
+        <div>
+            <button class="boutonaccess" onclick="document.body.classList.toggle('large-text')">
+                Cliquez ici pour agrandir le texte.
+            </button>
+        </div>
+        <div class="titulo">
+            <h1>Edición digital bilingue de <i>Luz i sombra</i> de Soledad Acosta</h1>
+            <h2>Édition numérique bilingue de <i>La lumière et l'ombre</i> de Soledad Acosta</h2>
+            <img src="luzysombra.jpg" alt="luzysombra" width="300px">
+        </div>
+        
+        <div class="intro">
+            
+            <!--ESPAGNOL -->
+                          
+                <p class="esp">
+                    Bienvenidos a esta edición digital de una de las numerosas obras 
+                    de la escritora colombiana Soledad Acosta de Samper (1833–1913).
+                </p>
+                
+            <p class="esp">
+                    Esta edición digital bilingüe de <i>Luz y sombra</i> fue realizada 
+                    en el marco del Máster en Humanidades Digitales, especialidad Ediciones digitales, 
+                    en la Université de Rouen Normandie (2023–2025), 
+                    bajo la dirección de Laurence Macé.
+                </p>
+                
+            <p class="esp">
+                    Concebida como un laboratorio editorial, propone una lectura en paralelo 
+                    del texto original en español y su traducción al francés, acompañada de 
+                    anotaciones, visualizaciones y herramientas interactivas.
+                </p>
+                
+            <p class="esp">
+                    Inicialmente basada en la edición impresa de 1869, la investigación se amplió 
+                    posteriormente con el hallazgo de un manuscrito conservado en el 
+                    Instituto Caro y Cuervo. Esta superposición de fuentes abrió una reflexión 
+                    sobre la génesis editorial de la obra, actualmente prolongada en un proyecto doctoral.
+                </p>
+                
+            <p class="esp">
+                    La presente edición constituye así un espacio experimental donde convergen 
+                    texto, tecnología e historia literaria.
+                </p>
+                
+            </div>
+            
+            <!-- VERSION FRANÇAISE -->
+        <div class="intro">               
+            <p class="fr">
+                    Soyez les bienvenus à cette édition numérique d’une des nombreuses œuvres 
+                    de l’écrivaine colombienne Soledad Acosta de Samper (1833–1913).
+                </p>
+                
+            <p class="fr">
+                    Cette édition numérique bilingue de <i>Luz y sombra</i> a été réalisée 
+                    dans le cadre du Master Humanités numériques, spécialité Éditions numériques 
+                    à l’Université de Rouen Normandie (2023–2025), 
+                    sous la direction de Laurence Macé.
+                </p>
+                
+            <p class="fr">
+                    Conçue comme un laboratoire éditorial, elle propose une mise en regard 
+                    du texte espagnol et de sa traduction française, enrichie d’annotations, 
+                    de visualisations et d’outils interactifs.
+                </p>
+                
+            <p class="fr">
+                    Initialement fondée sur l’édition imprimée de 1869, la recherche s’est ensuite 
+                    élargie à la découverte d’un manuscrit conservé à l’Instituto Caro y Cuervo. 
+                    Cette stratification des sources a ouvert une réflexion sur la genèse éditoriale 
+                    de l’œuvre.
+                </p>
+                
+            <p class="fr">
+                    Cette édition constitue ainsi un chantier expérimental : un espace de recherche, 
+                    d’exploration et de dialogue entre texte, technologie et histoire littéraire.
+                </p>
+                
+            
+        </div>
+        
+        <div class="language-selector">
+            
+                <h1>Para comenzar, seleccione el idioma:</h1>
+                <h2>Pour commencer, sélectionnez la langue :</h2>
+                
+                <button onclick="goToConte('es')">Español</button>
+                <button onclick="goToConte('fr')">Français</button>
+        </div>   
+        <div>
+            
+        </div>
+        
+        <footer class="foot">
+                        
+            <div class="footer-logos">
+                <img src="rouen.jpg" alt="logo université de Rouen">
+                <img src="normandie1.jpg" alt="logo Normandie">
+            </div>
+            <p class="footer-texto">
+                Édition numérique créée par Yury Nataly Garzón Díaz.
+            </p>
+        </footer>
+        
+    </body>
+</html>

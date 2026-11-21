@@ -1,0 +1,1657 @@
+<!DOCTYPE HTML>
+<html xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" lang="fr">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Édition numérique de « Luz y sombra » de Soledad Acosta</title>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script>
+                                            
+                                            function getLanguageFromURL() {
+                                            const params = new URLSearchParams(window.location.search);
+                                            return params.get('lang');
+                                            }
+                                            
+                                            document.addEventListener("DOMContentLoaded", function() {
+                                            const lang = getLanguageFromURL();
+                                            if (lang === 'es') {
+                                            switchLanguage('espanol');
+                                            }
+                                            if (lang === 'fr') {
+                                            switchLanguage('francais');
+                                            
+                                            } else {
+                                            switchLanguage('espanol');   /* Définit cette langue par défaut */
+                                            }
+                                            });
+                                            function switchLanguage(lang) {
+                                            document.querySelectorAll('.version').forEach(section => {
+                                            section.style.display = 'none';
+                                            });
+                                            
+                                            const selectedVersion = document.getElementById(lang);
+                                            if (selectedVersion) {
+                                            selectedVersion.style.display = 'block';
+                                            }
+                                            
+                                            if (lang === 'espanol') {
+                                            showSection('section-1');
+                                            } else if (lang === 'francais') {
+                                            showSection('section-fr-1');
+                                            }
+                                            }
+                                            
+                                            function showSection(sectionId) {
+                                            document.querySelectorAll('.content-section').forEach(section => {
+                                            section.style.display = 'none';  /* Cache toutes les sections */
+                                            });
+                                            
+                                            const selectedSection = document.getElementById(sectionId);
+                                            
+                                            if (selectedSection) {
+                                            selectedSection.style.display = 'block'; /* Affiche la section demandée */
+                                            
+                                            window.scrollTo({
+                                            top: 0,                       /* Ramène la page en haut */
+                                            behavior: 'smooth'            /* Ajoute une animation fluide */
+                                            });}
+                                            }
+                                            
+                                            function showNextSection(currentSectionId) {
+                                            const sections = document.querySelectorAll('.conte-section');
+                                            let nextSection = null;
+                                            
+                                            sections.forEach(section => {
+                                            if (section.id === currentSectionId) {
+                                            nextSection = section.nextElementSibling;
+                                            section.style.display = 'none'; // ✅ corrigé
+                                            }
+                                            });
+                                            
+                                            if (nextSection) {
+                                            nextSection.style.display = 'block';
+                                            
+                                            setTimeout(() => {
+                                            const mainContent = document.querySelector('.version[style*="block"]');
+                                            if (mainContent) {
+                                            mainContent.scrollIntoView({
+                                            behavior: 'smooth',
+                                            block: 'start'
+                                            });
+                                            }
+                                            }, 50);
+                                            }
+                                            }
+                                            
+                                            function showTraits(event, key) {
+                                            event.preventDefault();
+                                            
+                                            document.querySelectorAll('.traits').forEach(trait => {
+                                            trait.style.display = 'none';
+                                            });
+                                            
+                                            const traits = document.getElementById(`traits-${key}`);
+                                            if (traits) {
+                                            traits.style.display = 'block';
+                                            }
+                                            
+                                            highlightElements(key);
+                                            }
+                                            
+                                            function highlightElements(key) {
+                                            document.querySelectorAll('.highlight').forEach(el => {
+                                            el.classList.remove('highlight');
+                                            });
+                                            
+                                            document.querySelectorAll(`[data-key="${key}"]`).forEach(el => {
+                                            el.classList.add('highlight');
+                                            });
+                                            }
+                                            
+                                            let map;
+                                            let marker;
+                                            
+                                            function initMap() {
+                                            map = L.map('map-container').setView([6.6437, -73.6532], 6);
+                                            
+                                            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                            attribution: '© OpenStreetMap contributors'
+                                            }).addTo(map);
+                                            }
+                                            
+                                            function showMap(event, coords, placeName) {
+                                            event.preventDefault();
+                                            document.getElementById('map-modal').style.display = 'block';
+                                            
+                                            setTimeout(() => {
+                                            map.invalidateSize();
+                                            }, 200);
+                                            
+                                            if (!coords || coords.trim() === '') {
+                                            alert("Lugar no indicado. Lieu non précisé.");
+                                            return;
+                                            }
+                                            
+                                            const [lat, lng] = coords.split(',').map(Number);
+                                            
+                                            map.setView([lat, lng], 8);
+                                            
+                                            if (marker) {
+                                            map.removeLayer(marker);
+                                            }
+                                            
+                                            marker = L.marker([lat, lng])
+                                            .addTo(map)
+                                            .bindPopup(`<strong>${placeName}</strong><br>${getLocationDescription(placeName)}`)
+                                                .openPopup();
+                                                }
+                                                
+                                                function closeMap() {
+                                                document.getElementById('map-modal').style.display = 'none';
+                                                }
+                                                
+                                                document.addEventListener("DOMContentLoaded", initMap);
+                                        </script></head>
+   <body>
+      <div>
+         <ul id="nav">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="conte.html">Luz y sombra</a></li>
+            <li><a href="versionescomparadas.html">Version bilingue comparée</a></li>
+            <li><a href="mujer.html">Personnages par genre</a></li>
+            <li><a href="manuscrit.html">Manuscrit et sources</a></li>
+            <li><a href="references.html">Références complémentaires</a></li>
+            <li><a href="credits.html">Crédits</a></li>
+         </ul>
+      </div>
+      <div><button class="boutonaccess" onclick="document.body.classList.toggle('large-text')">
+            Cliquez ici pour agrandir le texte.
+            </button></div>
+      <div class="explicacion">
+         <p class="presentacion"><i>Luz y sombra</i> es un cuento del siglo XIX escrito por Soledad Acosta de Samper. Fue publicado en
+            la prensa en tres publicaciones, llamadas en la época « entregas ».</p>
+         <p class="presentation"><i>La Lumière et l'Ombre</i> est un conte du XIXe siècle écrit par Soledad Acosta de Samper. Il a été publié dans
+            la presse en trois parutions, appelées à l'époque « livraisons ».</p>
+      </div>
+      <div class="language-selector"><button onclick="switchLanguage('espanol')">Leer en español</button><button onclick="switchLanguage('francais')">Lire en français</button></div>
+      <div id="espanol" class="version" style="display: none;">
+         <nav class="side-menu"><button onclick="showSection('personnages-espanol')">Personajes</button><button onclick="showSection('lieux-espanol')">Lugares</button><button onclick="showSection('organisations-espanol')">Grupo de personas</button><button onclick="showSection('contexto-historico-espanol')">Otra categoría</button></nav>
+         <div id="personnages-espanol" class="content-section">
+            <ul>
+               <li><a href="#" onclick="showTraits(event, 'madreDeMercedes')">mi madre</a></li>
+               <li><a href="#" onclick="showTraits(event, 'padreDeMercedes')">mi padre</a></li>
+               <li><a href="#" onclick="showTraits(event, 'aureliana')">Aureliana</a></li>
+               <li><a href="#" onclick="showTraits(event, 'donaPrudencia')">doña Prudencia</a></li>
+               <li><a href="#" onclick="showTraits(event, 'sebastiana')">Sebastiana</a></li>
+               <li><a href="#" onclick="showTraits(event, 'presidente')">el presidente</a></li>
+               <li><a href="#" onclick="showTraits(event, 'mercedes')">Mercedes</a></li>
+               <li><a href="#" onclick="showTraits(event, 'madreDeAureliana')">Mi madre</a></li>
+               <li><a href="#" onclick="showTraits(event, 'gabriel')">Gabriel</a></li>
+               <li><a href="#" onclick="showTraits(event, 'vicente')">Vicente</a></li>
+               <li><a href="#" onclick="showTraits(event, 'mariano')">Mariano</a></li>
+               <li><a href="#" onclick="showTraits(event, 'fernando')">Fernando</a></li>
+               <li><a href="#" onclick="showTraits(event, 'elLibertador')">el Libertador</a></li>
+               <li><a href="#" onclick="showTraits(event, 'unOficial')">un oficial</a></li>
+               <li><a href="#" onclick="showTraits(event, 'negroEsclavo')">un negro esclavo</a></li>
+               <li><a href="#" onclick="showTraits(event, 'hijaDeAureliana')">la hija</a></li>
+               <li><a href="#" onclick="showTraits(event, 'esposoDeAureliana')">el señor N***</a></li>
+               <li><a href="#" onclick="showTraits(event, 'venerableMatrona')">una venerable matrona</a></li>
+            </ul>
+         </div>
+         <div id="lieux-espanol" class="content-section">
+            <ul>
+               <li><a href="#" onclick="showMap(event, '6.65877964259512, -73.53697166231863', 'Santander')">Santander</a></li>
+               <li><a href="#" onclick="showMap(event, ' 4.7132921631617695, -74.08173126420829', 'Bogotá')">Bogotá</a></li>
+               <li><a href="#" onclick="showMap(event, '40.463667, -3.749220', 'España')">España</a></li>
+               <li><a href="#" onclick="showMap(event, '', 'la hacienda de mi padre')">la hacienda de mi padre</a></li>
+               <li><a href="#" onclick="showMap(event, '4.458200, -74.634340', 'Tocaima')">Tocaima</a></li>
+               <li><a href="#" onclick="showMap(event, '4.716667, -74.166664', 'la Sabana')">la Sabana</a></li>
+               <li><a href="#" onclick="showMap(event, '4.632000, -74.463000', 'la Mesa')">la Mesa</a></li>
+               <li><a href="#" onclick="showMap(event, '10.399720, -75.514440', 'Cartajena')">Cartajena</a></li>
+               <li><a href="#" onclick="showMap(event, '', '***')">***</a></li>
+               <li><a href="#" onclick="showMap(event, '38.000000, -97.000000', 'Estados Unidos')">Estados Unidos</a></li>
+            </ul>
+         </div>
+         <div id="organisations-espanol" class="content-section">
+            <ul>
+               <li><a href="#" onclick="showTraits(event, 'pueblo')">El pueblo</a></li>
+               <li><a href="#" onclick="showTraits(event, 'lasHernandez')">las señoritas Hernández</a></li>
+               <li><a href="#" onclick="showTraits(event, 'aduladores')">un grupo
+                     de jóvenes</a></li>
+               <li><a href="#" onclick="showTraits(event, 'otrasMujeres')">todas
+                     las demas</a></li>
+               <li><a href="#" onclick="showTraits(event, 'altosPersonajes')">los altos personajes de la república</a></li>
+               <li><a href="#" onclick="showTraits(event, 'laFamiliaHernandez')">la
+                     familia Hernández</a></li>
+               <li><a href="#" onclick="showTraits(event, 'losPrincipalesHabitantes')">los
+                     principales habitantes</a></li>
+               <li><a href="#" onclick="showTraits(event, 'hermanasDeAureliana')">mis
+                     hermanas</a></li>
+               <li><a href="#" onclick="showTraits(event, 'amigasDeAureliana')">mis amigas</a></li>
+               <li><a href="#" onclick="showTraits(event, 'medicos')">los 
+                     médicos</a></li>
+               <li><a href="#" onclick="showTraits(event, 'hijosVaronesDeAureliana')">sus dos hijos</a></li>
+               <li><a href="#" onclick="showTraits(event, 'otrosEnGeneral')">los demas</a></li>
+               <li><a href="#" onclick="showTraits(event, 'hijosEhijaDeAureliana')">sus hijos</a></li>
+               <li><a href="#" onclick="showTraits(event, 'familiaDeAureliana')">su familia</a></li>
+            </ul>
+         </div>
+         <div id="contexto-historico-espanol" class="content-section">
+            <h2>Otra categoría</h2>
+            <ul></ul>
+         </div>
+         <div id="section-1" class="conte-section">
+            
+            <div class="head">
+               
+               <div class="ltitulo">LUZ Y SOMBRA.</div>
+               
+               <div class="ltitulo">(Cuadros de la vida de una coqueta).</div>
+               
+               <div class="ltitulo">I</div>
+               
+               <div class="ltitulo">LA JUVENTUD.</div>
+               </div>
+            
+            
+            <div class="paragraphe">Brillaba <span data-key="santander" class="placeName">Santander</span> en toda su gloria
+               militar, en todo el esplendor de sus triunfos 
+               y en el apojeo de su juventud y gallardía. 
+               <span data-key="pueblo" class="orgName">El pueblo</span> se regocijaba con su adquirida
+               patria, y el gozo y satisfaccion
+               que causa el sentimiento de la libertad
+               noblemente conquistada se leía en todos
+               los semblantes.</div>
+            
+            
+            <div class="paragraphe">Contaba yo de catorce a quince años.
+               Habia perdido a <span data-key="madreDeMercedes" class="persName">mi madre</span> poco ántes, y
+               <span data-key="padreDeMercedes" class="persName">mi padre</span>, viéndome triste y abatida, quiso 
+               que acompañada por una señora respetable, 
+               visitase a <span data-key="bogota" class="placeName">Bogotá</span>  y asistiese a
+               las procesiones de Semana Santa, que se
+               anunciaban particularmente solemnes
+               para ese año. En aquel tiempo <span data-key="pueblo" class="orgName">el pueblo</span>
+               confundia siempre el sentimiento relijioso 
+               con los acontecimientos políticos, y en
+               la Semana Santa cada cual procuraba
+               manifestarse agradecido al SEÑOR que
+               nos habia libertado del yugo de <span data-key="espana" class="placeName">España</span>.</div>
+            
+            
+            <div class="paragraphe">Triste, desalentada, tímida y retraida
+               llegué a casa de <span data-key="lasHernandez" class="orgName">las señoritas Hernández</span>,
+               donde mi compañera, doña Prudencia,
+               acostumbraba desmontarse en <span data-key="bogota" class="placeName">Bogotá</span>.
+               <span data-key="lasHernandez" class="orgName">Las Hernández</span> eran las mujeres mas de
+               modaymas afamadas por su belleza que
+               habia entónces, particularmente una de
+               ellas, <span data-key="aureliana" class="persName">Aureliana</span>. Llegamos el Lúnes
+               Santo a las dos de la tarde, y <span data-key="donaPrudencia" class="persName">doña Prudencia</span>, deseosa de que yo no perdiese
+               procesion, me obligó a vestirme, y casi
+               por fuerza me llevó a un balcon de la
+               calle real a reunirnos a <span data-key="lasHernandez" class="orgName">las Hernández</span>,
+               que ya habian salido de casa.</div>
+            
+            
+            <div class="paragraphe">Cuando ví los balcones llenos de jente
+               ricamente vestida, las barandas cubiertas
+               con fastuosas colchas, y me encontré en
+               medio de una multitud de muchachas
+               alegres y chanceras,—me sentí profundamente triste y avergonzada, y hubiera
+               querido estar en el bosque mas retirado
+               de <span data-key="laHacienda" class="placeName">la hacienda de mi padre</span>.</div>
+            
+            
+            <div class="paragraphe">
+               
+               <div class="ldialogo">—¡Allá viene <span data-key="aureliana" class="persName">Aureliana</span>! esclamó <span data-key="donaPrudencia" class="persName">doña Prudencia</span>.</div>
+               
+               <div class="ldialogo">—¿Dónde? pregunté, deseosa de conocerla; pues su estraordinaria hermosura era el tema de todas las conversaciones.</div>
+               
+               <div class="ldialogo">—Aquella que viene rodeada de varios caballeros.</div>
+               
+               <div class="ldialogo">—¿La que trae saya de terciopelo
+                  negro con adornos azules y velo de encaje negro?</div>
+               
+               <div class="ldialogo">—No, esa es <span data-key="sebastiana" class="persName">Sebastiana</span>, la hermana
+                  mayor. La que viene detras con una saya
+                  de terciopelo violeta, guarniciones de
+                  raso blanco y mantilla de encaje blanco,
+                  es <span data-key="aureliana" class="persName">Aureliana</span>.</div>
+            </div>
+            
+            
+            <div class="paragraphe">¡No creo que ha habido nunca mujer
+               mas hermosa! Un cuerpo elegante y gallardo, una blancura maravillosa, ojos
+               que brillaban como soles, labios divinamente formados que cubrian dientes de
+               perlas... y por último sin igual donaire
+               y gracia. Subió inmediatamente al balcon
+               en que yo estaba, rodeada por <span data-key="aduladores" class="orgName">un grupo
+                  de jóvenes</span> que como mariposas jiraban
+               en torno suyo. Los saludos, las sonrisas,
+               las miradas tiernas, los elojios mas apasionados eran para <span data-key="aureliana" class="persName">Aureliana</span>. <span data-key="sebastiana" class="persName">Sebastiana</span> era tambien mui bella, 
+               pero su hermana arrebataba y hacia olvidar a <span data-key="otrasMujeres" class="orgName">todas
+                  las demas</span>. Su gracia, sus movimientos
+               elegantes, su anjelical sonrisa y mirada
+               ya lánguida, ya viva, alegre o sentimental, todo en <span data-key="aureliana" class="persName">Aureliana</span> encantaba.</div>
+            
+            
+            <div class="paragraphe">Volví con <span data-key="lasHernandez" class="orgName">las Hernández</span> a su casa,
+               pero era tal la impresion que <span data-key="aureliana" class="persName">Aureliana</span>
+               me habia hecho, que no podia apartar
+               mi vista de su precioso rostro. Enseñada
+               a que jeneralmente <span data-key="otrasMujeres" class="orgName">las demas mujeres</span>
+               la mirasen con envidia, la hermosa coqueta comprendió mi sencilla admiracion,
+               me la agradeció, y llamándome a su lado,
+               me hizo mil cariños, halagándome con
+               afectuosas palabras. Al tiempo de retirarse a su cuarto me llevó consigo, diciendo que me tomaba bajo su
+               proteccion.</div>
+            
+            
+            <div class="paragraphe">El cuarto estaba lujosamente amoblado. Sobre las mesas se veian los regalos que le
+               habian enviado aquel dia:
+               joyas, vestidos, adornos costosos, piezas
+               de bajilla, flores naturales y artificiales,
+               frutas raras y esquisitas... En fin, allí
+               estaban los objetos mas curiosos que se
+               podian encontrar en <span data-key="bogota" class="placeName">Bogotá</span>.</div>
+            
+            
+            <div class="paragraphe">
+               
+               <div class="ldialogo">—¿Es hoi el cumpleaños de U? la
+                  pregunté admirada al ver tantos regalos.</div>
+               
+               <div class="ldialogo">—No, me contestó con aire de triunfo.
+                  Mis sonrisas valen mas que todo esto que
+                  me envían en cambio de ellas. Cada uno
+                  de los que se me han acercado hoi, al
+                  comprender algun capricho mio, me han 
+                  querido complacer enviando lo que deseaba.</div>
+            </div>
+            
+            
+            <div class="paragraphe">Un no sé qué irónico y triste pasó por
+               su lindo rostro al decir estas palabras, e
+               instintivamente sentí que aquella existencia de vanidad me repugnaba.</div>
+            
+            
+            <div class="paragraphe">Durante las dos semanas que permanecí en <span data-key="bogota" class="placeName">Bogotá</span> estuve continuamente con <span data-key="aureliana" class="persName">Aureliana</span>, y al tiempo de despedirme ví brillar una lágrima de sentimiento
+               entre sus crespas pestañas. Apesar de
+               los homenajes de todos <span data-key="altosPersonajes" class="orgName">los altos personajes de la república</span>, de las fiestas que le
+               daban y de los elojios que la prodigaban,—la humilde admiracion de una campesina despertó en su corazon un cariño sincero.</div>
+            
+            
+            <div class="paragraphe">Me hallaba algunos años despues en <span data-key="tocaima" class="placeName">Tocaima</span> con mi padre enfermo cuando 
+               se supo que en esos dias llegarian <span data-key="lasHernandez" class="orgName">las
+                  Hernández</span>. Este fué un acontecimiento
+               para todos los que estaban en <span data-key="tocaima" class="placeName">el pueblo</span>.
+               <span data-key="aureliana" class="persName">Aureliana</span> se habia enfermado ¡qué calamidad! 
+               Se dijo que <span data-key="presidente" class="persName">el presidente</span> le
+               prestaria su coche para atravesar <span data-key="laSabana" class="placeName">la Sabana</span> yque los mejores caballos de <span data-key="bogota" class="placeName">la capital</span> estaban a su disposicion. En <span data-key="laMesa" class="placeName">la Mesa</span> le prepararon una silla de manos,
+               por si acaso preferia ese modo de viajar.
+               En fin, cuando se supo que llegaba <span data-key="laFamiliaHernandez" class="orgName">la
+                  familia Hernández</span>, salieron todos <span data-key="losPrincipalesHabitantes" class="orgName">los
+                  principales habitantes</span> del lugar a recibirla.</div>
+            
+            
+            <div class="paragraphe">Les habian destinado la mejor casa
+               de <span data-key="tocaima" class="placeName">Tocaima</span>, y cada cual envió cuanto
+               creia que la enferma pudiese necesitar.
+               Apénas supo <span data-key="aureliana" class="persName">Aureliana</span> que yo estaba
+               en <span data-key="tocaima" class="placeName">el pueblo</span>, me mandó llamar con mil
+               afectuosas espresiones. La encontré pálida, pero bella como siempre. Aunque la acompañaba <span data-key="otrasMujeres" class="orgName">una comitiva bastante
+                  numerosa de jóvenes y amigas de <span data-key="bogota" class="placeName">Bogotá</span></span>,
+               gustaba mucho de mi compañía y pasábamos una gran parte del día juntas.</div>
+            
+            
+            <div class="paragraphe">Una noche dieron en <span data-key="tocaima" class="placeName">el pueblo</span> un
+               baile para festejar la reposicion de Aureliana; pero ella al tiempo de salir, dijo
+               que no se sentia bastante fuerte para
+               concurrir al baile y que permanecería en
+               casa; y en efecto, me envió a llamar para
+               que la acompañase aquella noche.</div>
+            
+            
+            <div class="paragraphe">La hallé sola en un cuartito que habian arreglado para ella con lo mejor
+               que se encontró en el lugar. Una esperma puesta detras de una pantalla esparcia su
+               luz suave por la pieza, y en medio de las sombras se destacaba la aérea figura de Aureliana, que ataviada caprichosamente
+               con un vestido popular, dejaba descubiertos sus brazos torneados i
+               ocultaba en parte sus espaldas bajo un
+               <em>paño</em> de linon blanco. Estaba recostada
+               en una hamaca y apoyando la cabeza
+               sobre el brazo doblado, con la otra mano
+               acariciaba las largas trenzas de cabello
+               rubio que hacian contraste con sus rasgados ojos negros y brillantes.</div>
+            
+            
+            <div class="paragraphe">
+               
+               <div class="ldialogo">—¡Bien venida, <span data-key="mercedes" class="persName">Mercedes</span>! dijo lánguidamente al verme. <span data-key="madreDeAureliana" class="persName">Mi madre</span> y <span data-key="hermanasDeAureliana" class="orgName">mis
+                     hermanas</span> se fueron al baile, y no las
+                  acompañé porque estoi demasiado fastidiada para pensar en diversiones.</div>
+               
+               <div class="ldialogo">—¡U. fastidiada! esclamé.</div>
+               
+               <div class="ldialogo">—I, ¿por qué no? ¿Acaso no se encuentra siempre hiel en toda copa de dicha que apuramos
+                  hasta el fondo?</div>
+               
+               <div class="ldialogo">—Qué poetica está U. esta noche.</div>
+               
+               <div class="ldialogo">—No soi yo,-esa frase me la enseñó
+                  <span data-key="gabriel" class="persName">Gabriel</span> el literato, uno de mis adoradores.</div>
+               
+               <div class="ldialogo">—Pero no deberia U. ni en chanza
+                  quejarse de su suerte.</div>
+               
+               <div class="ldialogo">—Yo no me quejo. He obtenido de
+                  los demas cuanto he querido... pero...</div>
+               
+               <div class="ldialogo">—¡Cómo! esclamé ¿No le basta aún
+                  tanta adoracion, tanto amor como el que
+                  la rodea?</div>
+               
+               <div class="ldialogo">—Siéntate a mi lado, <span data-key="mercedes" class="persName">Mercedes</span>, me
+                  dijo, tuteándome, de repente: no sé por
+                  qué tengo por tí tanta predileccion; i
+                  añadió en voz baja,-será tal vez porque
+                  eres la única mujer (no esceptuo a <span data-key="hermanasDeAureliana" class="orgName">mis
+                     hermanas</span>) que no se ha mostrado envidiosa de mí... ¡Ah! esclamó un momento despues con tristeza,
+                  ¡cuán poco
+                  fundamento tienen para ello!</div>
+               </div>
+            
+            
+            <div class="paragraphe">
+               Yo no sabia qué contestarle y guardé
+               silencio.</div>
+            
+            
+            <div class="paragraphe">
+               
+               <div class="ldialogo">-Dime, añadió, ¿sabes lo que es amar?</div>
+            </div>
+            
+            
+            <div class="paragraphe">
+               Bajé los ojos sin contestar: sabia lo
+               que era amar, pero ese sentimiento lo
+               guardaba en mi corazon como un secreto.</div>
+            
+            <div class="paragraphe">
+               
+               <div class="ldialogo">—¿No me contestas...? No es una pregunta vana, ni una curiosidad mujeril. Deseo saber
+                  la verdad... Quisiera comprender lo que hai en otro corazon...</div>
+               
+               <div class="ldialogo">—Hace dos años, contesté, que estoi
+                  comprometida a casarme, y nunca me ha
+                  pesado. Eso le bastará para comprender
+                  que sé lo que es amar.</div>
+               
+               <div class="ldialogo">—Eres mas feliz que yo entónces, repuso, apoyando su mano afectuosamente sobre la
+                  mia. Yo nunca he podido amar verdaderamente. Esa es la herida secreta de mi alma.
+                  Tengo cerca de treinta años
+                  i, ¡no sé lo que es amar con el corazon, con abnegacion, con ternura! Mi vanidad ha
+                  sido halagada mil veces: mi imajinacion se ha entusiasmado; pero mi corazon no ha
+                  sabido, no ha podido amar sinceramente. Nunca me ha ocurrido olvidarlo todo por el
+                  objeto amado: nunca
+                  he encontrado tranquilidad ni completa
+                  dicha al lado de <em>uno</em> solo. Me dicen que
+                  amar es vivir pensando siempre en el ser
+                  predilecto, asociándolo a todo los momentos de nuestra vida, siendo su nombre la primer
+                  palabra al despertar, i
+                  siendo <em>él</em> nuestro último pensamiento al
+                  dormirnos... Amar debe de ser vivir
+                  en un mundo aparte sintiendo conmociones inefables de suprema ternura... Dime ¿es
+                  así como amas?</div>
+               
+               <div class="ldialogo">—Ha descrito U. mis mas íntimos
+                  sentimientos. Pero, añadí, amar es tambien sufrir. ¿No es U. mas feliz con su tranquilidad?</div>
+               
+               <div class="ldialogo">—No, hija mia: hai mas dicha en
+                  amar que en ser amado, me ha dicho
+                  muchas veces <span data-key="vicente" class="persName">Vicente</span> el poeta, y lo creo.
+                  Tenia yo apénas catorce años cuando
+                  por primera vez comprendí que mi belleza inspiraba amor y avasallaba. Encantada, creí corresponder durante algunos dias ¡pobre <span data-key="mariano" class="persName">Mariano</span>! La ilusion pasó al momento que otro de mejor presencia se me acercó. Creí haberme
+                  equivocado en mi primer afecto y lo rechacé para acojer al segundo.—Pero sucedió
+                  lo mismo con este y los demas. Para entónces sabia el precio de mi palabra mas insignificante, de mis
+                  miradas mas vagas
+                  i, te lo confieso, me hice coqueta con el
+                  corazon vacío y la imajinacion ardiente—La sociedad entera estaba a mis pies: ninguna mujer podia
+                  competir conmigo.
+                  Las palabras de adoracion que oia no
+                  causaban ninguna impresion en mi corazon: las recibia con frialdad, pero las contestaba
+                  con finjida ternura.</div>
+               (Continuará).</div>
+            
+            <button onclick="showNextSection('section-1')"><i>Continuará</i></button><div class="signature" id="signature-d2e758">ALDEBARÁN</div>
+         </div>
+         <div id="section-2" class="conte-section">
+            
+            <div class="head">
+               
+               <div class="ltitulo">LUZ Y SOMBRA.</div>
+               
+               <div class="ltitulo">(Continuacion).</div>
+               </div>
+            
+            
+            <div class="paragraphe">Instintivamente me aparté del lado
+               de <span data-key="aureliana" class="persName">Aureliana</span>. Esta mujer tan fria y tan
+               hermosa me horrorizaba. Su corazon
+               parecia una de aquellas cumbres nevadas
+               a cuyo ápice nunca han logrado llegar
+               los viajeros.</div>
+            
+            
+            <div class="paragraphe">
+               —Una vez, continuó, sin cuidarse de
+               mi movimiento de repulsion,—una vez
+               comprendí que en <span data-key="aduladores" class="orgName">el círculo de admiradores</span> 
+               que me rodeaba habia un jóven
+               que criticaba mi modo de ser y que no
+               sentia por mí ninguna admiracion. Esto
+               me chocó al principio y me dolió al fin.
+               <span data-key="fernando" class="persName">Fernando</span>, así se llamaba, se manifestaba 
+               siempre sério y severo conmigo y aun
+               a veces tuvo la audacia de censurarme.
+               Su frialdad delante de mí y sus improbaciones me causaron tanto disgusto, que
+               decidí conquistarlo a todo trance. Sin
+               manifestárselo claramente desplegué para 
+               él todos mis artes mostrándome tan
+               afectuosa, que pronto ví que le habian
+               hecho mella mis atenciones; pero aunque 
+               sus modales eran los de un hombre
+               galante, no se manifestaba enamorado.
+               Si no lo venzo, pensé, es un hombre superior 
+               y digno de un afecto verdadero.
+               Sinembargo, <span data-key="fernando" class="persName">Fernando</span> no buscaba mi
+               sociedad con preferencia, aunque ya no
+               me censuraba como ántes; y afectaba hablar 
+               delante de mí de la belleza de otras
+               mujeres. Desgraciadamente mi carácter
+               no es constante, y mi entusiasmo que
+               solo dura un momento, cede ante
+               cualquier dificultad. No hubiera querido 
+               verlo a mis piés, pero no consentia
+               mi amor propio que admirara a <span data-key="otrasMujeres" class="orgName">otras
+                  mujeres</span>. Miéntras tanto nuevas conquistas
+               y diversiones ocuparon mi pensamiento
+               y olvidé el noble propósito, apénas formado, 
+               de gozar con un amor secreto
+               aunque no fuera correspondido.
+               —¡Qué carácter tan estraño tiene U.!
+               pero continúe ¿qué se hizo <span data-key="fernando" class="persName">Fernando</span>?
+               —Lo vas a oír. Hace algunos meses
+               <span data-key="elLibertador" class="persName">el Libertador</span> dió un baile en una quinta
+               en los alrededores de <span data-key="bogota" class="placeName">Bogotá</span>. La noche
+               estaba lindísima y la luna iluminaba los
+               jardines. Fatigada del ruido y deseosa de
+               encontrarme sola para leer una carta
+               que se me habia entregado misteriosamente, 
+               me escapé de la casa sin ser vista, 
+               y me dirijí hácia un pabellon situado
+               en el fondo del jardin, en donde sabia
+               que hallaria luz y soledad. Envuelta en
+               un grueso pañolon que me escudaba del
+               frio de la noche, atravesé prestamente el
+               jardin y tomé una senda sombreada por
+               arbustos, y cortada por un riachuelo que
+               bajaba resonante del vecino cerro. El
+               contraste del ruido, las luces, la armonía
+               y la ajitacion de un baile con el tranquilo 
+               paisaje que atravesaba, me predispuso
+               a una melancolía vaga mui estraña a mi
+               carácter. Una lámpara colgada del techo
+               iluminaba el pabellon: al llegar a él me
+               dejé caer sobre un sofá y se me escapó
+               un suspiro. Otro suspiro hizo eco a mi
+               lado, y volviéndome hacia la puerta ví
+               que un caballero estaba ahí en pié. Disgustada 
+               del espionaje impertinente iba a
+               reconvenir al que habia interrumpido mi
+               soledad,cuando este desembozándose descubrió 
+               la pálida e interesante fisonomía
+               de <span data-key="fernando" class="persName">Fernando</span>.</div>   
+            
+            
+            <div class="paragraphe">
+               —<span data-key="fernando" class="persName">Fernando</span>, dije, ¿es U.?
+               —Tiene U. razon de admirarse,<span data-key="aureliana" class="persName">Aureliana</span>: 
+               no debia hallarme aquí, dijo; i
+               tomándome la mano, que instintivamente
+               le alargaba, imprimió sus labios en ella.
+               —¿Para qué luchar mas? añadió sentándose 
+               a mi lado. ¿Para qué finjir despego cuando 
+               no puedo ménos que adorarla?</div>
+            
+            
+            <div class="paragraphe">No sé si el corazon de <span data-key="otrasMujeres" class="orgName">todas las mujeres</span> 
+               es igual al mio; pero en vez de
+               sentirme dichosa con mi ántes anhelada
+               conquista, mi corazon permaneció tranquilo 
+               e indiferente. La desilusion mas
+               profunda se apoderó de mí al comprender 
+               que no era capaz de amar al único
+               hombre que tanto habia admirado; y en
+               lugar de contestarle como hubiera hecho
+               a otro cualquiera, bajé la cabeza en silencio 
+               y con amargura pensaba que todos
+               los hombres son iguales puesto que basta
+               lisonjear su vanidad para verlos rendidos.</div>
+            
+            
+            <div class="paragraphe"><span data-key="fernando" class="persName">Fernando</span> me refirió entónces la historia 
+               de su amor. Me confesó que cuando
+               me había conocido, primero sintió hácia
+               mí cierta repulsion y odio, y miraba con 
+               desden a todos los que se me humillaban;
+               pero que el deseo que le manifesté de
+               oír sus consejos y de agradarle, en lugar
+               de resentirme por sus censuras, le habia
+               sorprendido y poco a poco su odio fué
+               cambiándose en un afecto verdadero que
+               se convirtió en amor violento. Disgustado 
+               y humillado al comprender que no tenia 
+               fuerza para defenderse, habia luchado
+               largo tiempo para vencer su inclinacion,
+               y al fin determinó huir de mí y me habia
+               hecho entregar sijilosamente una carta
+               aquella noche. Era una tierna despedida.</div> 
+            
+            
+            <div class="paragraphe">Logré que <span data-key="fernando" class="persName">Fernando</span> no partiera. Deseaba 
+               despertar en mi corazon aquel interes 
+               que habia creido sentir por él en
+               un tiempo. ¡Amar debe de ser tan bello!
+               Pronto el mismo <span data-key="fernando" class="persName">Fernando</span> descubrió
+               que yo misma procuraba engañarme i
+               que nunca podia amarle. Sentia sinembargo 
+               perder un corazon tan noble y quise
+               convencerle de que le amaba, pero él no
+               se engañó, y se despidió de mí resignado i
+               triste, bien que sin sin manifestarse herido en
+               su amor propio. Hace un mes supe que habia 
+               muerto en <span data-key="cartagena" class="placeName">Cartajena</span> en un duelo por
+               causa mia, defendiéndome de las calumnias 
+               que propagaba contra mí <span data-key="unOficial" class="persName">un oficial</span>
+               a quien habia desdeñado. Esta muerte
+               me causa a veces remordimientos. Pero, ¿qué culpa tengo si no le podia amar?
+               Nunca le dije que no le correspondia....</div>       
+            
+            
+            <div class="paragraphe">
+               —En eso estuvo el error.
+               —Tal vez; pues me decia que mis miradas 
+               y mis espresiones de cariño le habian 
+               hecho concebir esperanzas, y creia
+               por momentos que no lo miraba con indiferencia. 
+               Sin esa idea jamas me hubiera amado.
+               —¡Pobre jóven! esclamé; desventurado el que la ame a U.
+               —No digas eso, contestó <span data-key="aureliana" class="persName">Aureliana</span>
+               con amargura. El que ama está recompensado 
+               con el grato sentimiento que lo
+               anima. Algunas veces me he sentido
+               inspirada por ráfagas, desgraciadamente
+               pasajeras, de una ternura que me ha henchido 
+               el corazon, ennoblecido el alma i
+               llenándome de bellos pensamientos. Pero, 
+               ¡cuán cortos han sido esos instantes! He
+               pasado mis dias buscando con ahinco el
+               amor, único objeto de la vida de una
+               mujer, pero en su lugar solo he hallado
+               desengaños y vacío. No creas que la coquetería 
+               que me tachan quizás con razon,
+               es el fruto de un corazon pervertido; no
+               lo creas: es que busco en todas partes
+               un ideal que huye de mí incesantemente.</div>
+            
+            
+            <div class="paragraphe">&gt;El lenguaje escojido, aunque sin verdadera 
+               profundidad de ideas que distinguia 
+               a <span data-key="aureliana" class="persName">Aureliana</span>, la hacia en estremo
+               agradable, pero no sabia hablar con elocuencia 
+               sino de si misma.</div>
+            
+            
+            <div class="paragraphe">De vez en cuando llegaba hasta nuestros 
+               oidos el eco lejano de la música del
+               baile a que <span data-key="aureliana" class="persName">Aureliana</span> habia rehusado
+               concurrir. Sacó su reló (objeto raro en
+               aquel tiempo) que pendia de una gruesa
+               cadena que llevaba al cuello. Eran las
+               doce de la noche.</div>
+            
+            
+            <div class="paragraphe">
+               —Esta noche no podré dormir, dijo
+               suspirando. La conversacion que hemos
+               tenido me ha causado suma tristeza y me
+               ha recordado escenas que quisiera olvidar. 
+               <span data-key="fernando" class="persName">Fernando</span> no es el único que se ha
+               perdido por causa mia.</div>
+            
+            
+            <div class="paragraphe">¡Qué alegres y triunfantes estarán
+               <span data-key="hermanasDeAureliana" class="orgName">mis hermanas</span> y <span data-key="amigasDeAureliana" class="orgName">mis amigas</span> sin mi presencia 
+               esta noche! esclamó un momento
+               despues, poniéndose en pié y mirándose-
+               en un espejo que tenia a la cabecera de
+               su cama. Mejor hubiera sido emplear
+               nuestro tiempo en el baile. ¿Quieres
+               ir? ¡Qué! añadió, viendo la seriedad con
+               que acojia una propuesta tan descabellada, 
+               ¡qué! ¿Te has impresionado con mi
+               charla sentimental? ¡Bah! eso es pasajero. 
+               ¡Ven al baile!</div>
+            
+            
+            <div class="paragraphe">
+               —¿Yo presentarme a esta hora? Imposible.
+               —Mandarémos llamar quien nos acompañe.
+               —No puedo, no quiero. Perdóneme
+               U, pero...
+               —No te quiero obligar, me contestó.
+               Yo iré, mi sistema consiste en no dejarme 
+               llevar nunca por la tristeza, y a todo
+               trance combatirla.</div>
+            
+            
+            <div class="paragraphe">No quiso ponerse adorno ninguno. Soltó 
+               su rubia cabellera, se ató una cinta
+               azul al derreror de la cabeza, se envolvió 
+               graciosamente en un sehal del mismo
+               color, y llamando a <span data-key="negroEsclavo" class="persName">un negro esclavo</span> le
+               mandó que llamase quien la fuera a
+               acompañar al baile.</div>
+            
+            
+            <div class="paragraphe">Mientras llegaban los amartelados ansiosos 
+               de obedecer su órden, me hizo
+               acostar en su cama y se despidió afectuosamente 
+               de mí al partir. Quedéme aterrada con las revelaciones que me habia
+               hecho y admirada de los caprichos de
+               aquella mujer tan estraña i... tan infeliz.</div>
+            
+            
+            <div class="paragraphe">Al cabo de pocos dias <span data-key="laFamiliaHernandez" class="orgName">la familia Hernández</span> 
+               regresó a <span data-key="bogota" class="placeName">Bogotá</span>; y se pasaron
+               cerca de treinta años sin que volviese
+               a ver a <span data-key="aureliana" class="persName">Aureliana</span> ni tener de ella sino
+               vagas noticias de que no hice caso.
+               (Concluirá.)</div> 
+            
+            
+            <button onclick="showNextSection('section-2')"><i>Concluirá</i></button><div class="signature" id="signature-d2e1082">ALDEBARÁN.</div>
+         </div>
+         <div id="section-3" class="conte-section">
+            
+            <div class="head">
+               
+               <div class="ltitulo">LUZ Y SOMBRA</div>
+               
+               <div class="ltitulo">(Conclusion)</div>
+               
+               <div class="ltitulo">II.</div>
+               
+               <div class="ltitulo">LA VEJEZ.</div>
+               </div>
+            
+            
+            <div class="paragraphe">Yo me casé, mis hijos crecieron y a su 
+               vez me rodearon de nietos.</div>
+            
+            
+            <div class="paragraphe">Veia mi juventud en lontananza, como un sueño que pasó; pero estaba 
+               satisfecha con mi humilde suerte.</div>  
+            
+            
+            <div class="paragraphe">Descansaba una tarde sentada a la 
+               puerta de mi casa. El día había sido 
+               mui caluroso haciendo apetecible la sombra 
+               de los árboles que refrescaba mi alegre 
+               habitacion. De repente veo salir de 
+               la posada del pueblo a una señora anciana, 
+               inclinada por la edad y las dolencias i
+               apoyándose en el brazo de un negro viejo. 
+               Despues de vacilar un momento i
+               siguiendo la direccion que <span data-key="negroEsclavo" class="persName">el negro</span> le 
+               indicó, se dirijió hacia mí con suma lentitud 
+               y trabajo.</div>
+            
+            
+            <div class="paragraphe">Al llegar al sitio en que yo estaba, se 
+               detuvo y con voz apagada y triste me dijo:</div>
+            
+            
+            <div class="paragraphe">
+               —¿Me conoces <span data-key="mercedes" class="persName">Mercedes</span>?
+               —No, no recuerdo...
+               —Pero, ¿Tal vez no habrás olvidado a 
+               <span data-key="aureliana" class="persName">Aureliana Hernández</span>? ¿No es cierto?
+               —¡La señora <span data-key="aureliana" class="persName">Aureliana</span>! ¿Acaso...?                —¡Soi yo!</div>
+            
+            
+            <div class="paragraphe">La miré llena de asombro. No le había 
+               quedado la menor señal de su singular 
+               belleza. Parecia tener más de setenta 
+               años: la cútis ajada por los afeites, y 
+               acaso tambien por los sufrimientos, estaba 
+               arrugada y amarillenta : los ojos, tan 
+               brillantes en la juventud, ahora turbios 
+               y enrojecidos : el cuerpo agoviado y el 
+               andar lento y trabajoso, indicaban que 
+               las penas de una larga enfermedad la 
+               habian envejecido aun mas que el trascurso 
+               de los años.</div> 
+            
+            
+            <div class="paragraphe">Inmediatamente la hice entrar y recordando 
+               el cariño que me tuvo en otro 
+               tiempo, la prodigué cuantos cuidados pude, 
+               procurando hacerla olvidar el aislamiento 
+               en que la encontraba. No me 
+               atrevia a preguntarle por su familia que 
+               abandonaba así en la vejez a mujer 
+               que habia sido tan contemplada en su 
+               juventud.</div>
+            
+            
+            <div class="paragraphe">Indagando el motivo que la habia 
+               traido a <span data-key="lugarOculto" class="placeName">***</span> me contestó :</div>
+            
+            
+            <div class="paragraphe">—Mis enfermedades, y la órden de <span data-key="medicos" class="orgName">los 
+                  médicos</span>.
+               —I, ¿la familia de U. está en <span data-key="bogota" class="placeName">Bogotá</span>?
+               —Sí. Allí están todos.
+               —¿I <span data-key="hijaDeAureliana" class="persName">la hija</span> de U. por qué no la 
+               acompaña?
+               —La pobre, dijo con una sonrisa de 
+               resignacion,—está en vísperas de casarse 
+               y no era justo que abandonase a su novio 
+               para venirse al lado de una inválida como yo.
+               —I, ¿<span data-key="esposoDeAureliana" class="persName">el señor N***</span> su esposo?
+               —El clima cálido le hace daño.
+               —I, ¿<span data-key="hijosVaronesDeAureliana" class="orgName">sus dos hijos</span>...?
+               —Sus negocios les impiden salir al 
+               campo. Pero vino acompañándome <span data-key="negroEsclavo" class="persName">el
+                  negro</span>, <span data-key="negroEsclavo" class="persName">el mismo esclavo</span> que conocerias 
+               en casa, y el único que comprende y soporta 
+               mis caprichos. Él nunca me ha 
+               querido abandonar apesar de ser ya libre.</div>
+            
+            
+            <div class="paragraphe"><span data-key="negroEsclavo" class="persName">Un antiguo esclavo fiel</span> era el único y 
+               el último apoyo que le había quedado a 
+               aquella mujer tan festejada. Se me apretaba 
+               el corazon al oirla, y se me arrasaron 
+               los ojos de lágrimas al contemplar 
+               una vejez tan triste despues de una juventud 
+               tan brillante.</div>
+            
+            
+            <div class="paragraphe"><span data-key="aureliana" class="persName">Aureliana</span> permaneció un mes en mi 
+               casa, atendida, me dijo, como no se veia 
+               hacia mucho tiempo. En las largas conversaciones 
+               que tuvimos comprendí que 
+               la segunda parte de su vida habia sido 
+               una terrible espiacion de la loca vanidad 
+               de la primera. Poco a poco me fue descubriendo 
+               los secretos mas dolorosos de 
+               su vida.</div>
+            
+            
+            <div class="paragraphe">Casada hácia el fin de su juventud 
+               con un hombre a quien ella no amaba, y 
+               de quien no era amada,—pronto descubrió 
+               que él solo habia querido especular 
+               con su riqueza, y notó con terror que su 
+               belleza desaparecia paso a paso. Sin educacion 
+               esmerada, sin instruccion ninguna, 
+               al perder esa hermosura que era su 
+               único atractivo, <span data-key="aduladores" class="orgName">los admiradores</span> fueron
+               abandonándola sucesivamente. Veía con 
+               afan que su presencia no causaba ya emocion 
+               y que las miradas de los concurrentes 
+               a las fiestas a que asistia no se fijaban 
+               en ella. Deseosa entónces de abandonar 
+               el teatro de sus primeros triunfos, 
+               acompañó a <span data-key="esposoDeAureliana" class="persName">su esposo</span> con gusto a los 
+               <span data-key="estadosUnidos" class="placeName">Estados Unidos</span>. Pero allí se vió aun 
+               mas desdeñada. Desesperada procuró 
+               hacer mil esfuerzos para recuperar su 
+               perdida hermosura, y pasaba largas horas
+               delante de su espejo adornándose con todo 
+               el arte que una esperiencia consumada 
+               le había enseñado. Ocasion hubo en 
+               que su espejo le hacia ver de nuevo la 
+               <span data-key="aureliana" class="persName">Aureliana</span> de su juventud, y llena de ilusiones 
+               y colmada de esperanzas se presentaba 
+               en las fiestas y en los bailes,—pero, 
+               ¡<span data-key="otrosEnGeneral" class="orgName">los demas</span> la miraban como se mira a 
+               una ruina blanqueada y pintada! <span data-key="otrasMujeres" class="orgName">Otras</span>, 
+               no mui bellas pero mas jóvenes, se llevaban la palma.</div>
+            
+            
+            <div class="paragraphe">¡Cuántos y cuán crueles desengaños 
+               tendria aquella pobre mujer, que habia 
+               fincado su vida en sus atractivos personales! 
+               Sufria momentos de postracion 
+               en que pedia a Dios la muerte mas bien 
+               que dejar de ser admirada.</div>
+            
+            
+            <div class="paragraphe">En esas luchas, en este afan pasó algunos 
+               años ántes de llegar a persuadirse 
+               de la inutilidad de sus esfuerzos. Las 
+               aguas, los polvos y los cosméticos con 
+               que procuró hacer revivir su perdida 
+               frescura aniquilaron los restos de su colorido 
+               y mancharon lo albo de su tez; las 
+               enfermedades apagaron ántes de tiempo 
+               el brillo de sus ojos y destruyeron su
+               hermosa cabellera, y por añadidura las 
+               lágrimas, los desengaños y las penas domésticas 
+               acabaron con el último resto 
+               de su singular belleza.</div>
+            
+            
+            <div class="paragraphe">Durante la niñez de <span data-key="hijosEhijaDeAureliana" class="orgName">sus hijos</span> estos se 
+               habían visto abandonados por <span data-key="aureliana" class="persName">la madre</span>, 
+               que perseguia sus últimos triunfos; y así 
+               perdió ese primer cariño filial tan puro 
+               y tan bello. Por otra parte, las palabras 
+               desdeñosas del <span data-key="esposoDeAureliana" class="persName">señor N***</span> habían hecho 
+               nacer en el corazon de <span data-key="hijosEhijaDeAureliana" class="orgName">esos niños</span> un sentimiento 
+               de completa indiferencia hácia 
+               <span data-key="aureliana" class="persName">su madre</span> desamada y poco respetada.</div>
+            
+            
+            <div class="paragraphe">Cuando al fin <span data-key="aureliana" class="persName">Aureliana</span> se convenció 
+               de que habian pasado los últimos arreboles 
+               de vanidad mundana, se volvió hácia 
+               <span data-key="hijosEhijaDeAureliana" class="orgName">sus hijos</span>; pero estos recibieron con 
+               disgusto sus espresiones de cariño, creyeron 
+               que era uno de los muchos caprichos 
+               pasajeros de que <span data-key="esposoDeAureliana" class="persName">su padre</span> la acusaba 
+               diariamente, y llenos de frialdad no la 
+               hicieron caso.</div>
+            
+            
+            <div class="paragraphe"><span data-key="aureliana" class="persName">Aureliana</span> era, en efecto, impertinente 
+               y caprichosa, resultado natural e 
+               infalible de su mala educacion y de la 
+               vida que habia llevado en su juventud. 
+               Para consolarse de sus desgracias presentes, 
+               no dejaba de hablar de su antigua 
+               belleza y de los triunfos de su juventud, 
+               añadiendo así al vacío de ideas la 
+               locuacidad ridícula, y la ruina de su carácter 
+               de madre a la ruina de su belleza 
+               de cortesana.</div> 
+            
+            
+            <div class="paragraphe">Continuamente enferma, <span data-key="familiaDeAureliana" class="orgName">su familia</span> la 
+               envió a que cambiase de clima, acompañada 
+               solamente por <span data-key="negroEsclavo" class="persName">el negro</span>. Despues 
+               de haberse visto adorada en su juventud 
+               por <span data-key="aduladores" class="orgName">cuantos</span> se le acercaban, despues de 
+               acostumbrarse a que <span data-key="aduladores" class="orgName">todos</span> se inclinasen 
+               ante su mas leve capricho y que su menor 
+               indisposicion fuese una calamidad 
+               pública, ahora, cuando se encontraba 
+               realmente enferma y débil, se veía abandonada 
+               hasta por los que tenian el deber 
+               de procurarle comodidades.</div>
+            
+            
+            <div class="paragraphe">No hace mucho que <span data-key="aureliana" class="persName">Aureliana</span> murió 
+               en <span data-key="bogota" class="placeName">Bogotá</span> olvidada y no llorada. En
+               medio de sus sufrimientos, me dicen que 
+               todavía hablaba de sus antiguos triunfos 
+               y de su belleza. La vanidad y los mundanos 
+               recuerdos de sus primeros años la 
+               acompañaron hasta las puertas de la 
+               tumba, cuya proximidad no le sujirió un 
+               solo pensamiento sério. Murió como había 
+               vivido: sin acordarse de su alma; 
+               ¡Tal vez ignorando que la tenía!</div>
+            
+            
+            <div class="paragraphe">------
+               Este episodio me fué referido no hace
+               mucho por <span data-key="venerableMatrona" class="persName">una venerable matrona</span> de <span data-key="lugarOculto" class="placeName">***</span>
+               y esto me ha probado una vez mas, cuán 
+               indispensable es para la mujer una educacion 
+               esmerada y una instruccion sana,
+               que adorne su mente, dulcifique sus desengaños 
+               y le haga desdeñar las vanidades 
+               de la vida. Los comentarios y las
+               reflecciones son inútiles aquí : la leccion
+               se comprende solamente con referir los
+               hechos, harto verdaderos para bochorno 
+               de lo que afrancesadamente solemos llamar 
+               "sociedad de buen tono."</div>
+            
+            
+            <button onclick="showNextSection('section-3')"><i>Fin</i></button><div class="signature" id="signature-d2e1526">ALDEBARÁN.</div>
+         </div>
+      </div>
+      <div id="francais" class="version">
+         <nav class="side-menu"><button onclick="showSection('personnages-francais')">Personnages</button><button onclick="showSection('lieux-francais')">Lieux</button><button onclick="showSection('organisations-francais')">Groupes de personnes</button><button onclick="showSection('contexte-historique-francais')">Une autre catégorie</button></nav>
+         <div id="personnages-francais" class="content-section">
+            <ul>
+               <li><a href="#" onclick="showTraits(event, 'madreDeMercedes')">ma mère</a></li>
+               <li><a href="#" onclick="showTraits(event, 'donaPrudencia')">Doña Prudencia</a></li>
+               <li><a href="#" onclick="showTraits(event, 'aureliana')">Aureliana</a></li>
+               <li><a href="#" onclick="showTraits(event, 'sebastiana')">Sebastiana</a></li>
+               <li><a href="#" onclick="showTraits(event, 'presidente')">président</a></li>
+               <li><a href="#" onclick="showTraits(event, 'mercedes')">Mercedes</a></li>
+               <li><a href="#" onclick="showTraits(event, 'madreDeAureliana')">Ma mère</a></li>
+               <li><a href="#" onclick="showTraits(event, 'gabriel')">Gabriel</a></li>
+               <li><a href="#" onclick="showTraits(event, 'vicente')">Vicente</a></li>
+               <li><a href="#" onclick="showTraits(event, 'mariano')">Mariano</a></li>
+               <li><a href="#" onclick="showTraits(event, 'fernando')">Fernando</a></li>
+               <li><a href="#" onclick="showTraits(event, 'negroEsclavo')">un esclave noir</a></li>
+               <li><a href="#" onclick="showTraits(event, 'hijaDeAureliana')">votre fille</a></li>
+               <li><a href="#" onclick="showTraits(event, 'esposoDeAureliana')">Monsieur N***</a></li>
+               <li><a href="#" onclick="showTraits(event, 'venerableMatrona')">une vénérable matrone</a></li>
+            </ul>
+         </div>
+         <div id="lieux-francais" class="content-section">
+            <ul>
+               <li><a href="#" onclick="showMap(event, '6.65877964259512, -73.53697166231863', 'Santander')">Santander</a></li>
+               <li><a href="#" onclick="showMap(event, '4.7132921631617695, -74.08173126420829', 'Bogota')">Bogota</a></li>
+               <li><a href="#" onclick="showMap(event, '40.463667, -3.749220', 'l’Espagne')">l’Espagne</a></li>
+               <li><a href="#" onclick="showMap(event, '', 'l’hacienda')">l’hacienda</a></li>
+               <li><a href="#" onclick="showMap(event, '4.458200, -74.634340', 'Tocaima')">Tocaima</a></li>
+               <li><a href="#" onclick="showMap(event, '4.716667, -74.166664', 'la Sabana')">la Sabana</a></li>
+               <li><a href="#" onclick="showMap(event, '4.632000, -74.463000', 'la Mesa')">la Mesa</a></li>
+               <li><a href="#" onclick="showMap(event, '10.399720, -75.514440', 'Carthagène')">Carthagène</a></li>
+               <li><a href="#" onclick="showMap(event, '', '***')">***</a></li>
+               <li><a href="#" onclick="showMap(event, '38.000000, -97.000000', 'États-Unis')">États-Unis</a></li>
+            </ul>
+         </div>
+         <div id="organisations-francais" class="content-section hidden">
+            <ul>
+               <li><a href="#" onclick="showTraits(event, 'pueblo')">Le peuple</a></li>
+               <li><a href="#" onclick="showTraits(event, 'lasHernandez')">Señoritas Hernandez</a></li>
+            </ul>
+         </div>
+         <div id="section-fr-1" class="conte-section">
+            
+            
+            <div class="head">
+               
+               <div class="ltitulo">LA LUMIÈRE ET L’OMBRE.</div>
+               
+               <div class="ltitulo">(Des scènes de la vie d’une coquette).</div>
+               
+               <div class="ltitulo">I.</div>
+               
+               <div class="ltitulo">LA JEUNESSE </div>
+               </div>
+            
+            
+            <div class="paragraphe"><span data-key="santander" class="placeName">Santander</span> brillait dans toute sa gloire militaire, dans la splendeur de ses triomphes et à
+               l’apogée de sa jeunesse et de sa prestance. <span data-key="pueblo" class="orgName">Le peuple</span> se réjouissait de sa patrie nouvellement acquise, et la joie ainsi que la satisfaction
+               qu'éveille le sentiment d'une liberté noblement conquise se lisaient sur tous les
+               visages.   
+               </div>
+            
+            
+            <div class="paragraphe">Je comptais quatorze ou quinze ans. J’avais perdu <span data-key="madreDeMercedes" class="persName">ma mère</span> peu de temps auparavant, et mon père, me voyant triste et abattue, voulut que, accompagnée par une femme respectable, je visite <span data-key="bogota" class="placeName">Bogota</span> et assiste aux processions de la Semaine sainte, qui s’annonçaient particulièrement
+               solennelles cette année-là. En ce temps, le peuple confondait toujours le sentiment
+               religieux avec les événements politiques, et pendant la Semaine sainte, chacun cherchait
+               à exprimer sa reconnaissance envers celui qui nous avait libérés du joug de <span data-key="espana" class="placeName">l’Espagne</span>.</div>
+            
+            
+            <div class="paragraphe">Triste, découragée, timide et introvertie, j’arrivai dans la maison des <span data-key="lasHernandez" class="orgName">Señoritas Hernandez</span>, où ma compagne de voyage, <span data-key="donaPrudencia" class="persName">Doña Prudencia</span>, avait l’habitude de descendre de sa monture à <span data-key="bogota" class="placeName">Bogota</span>. Les Hernandez étaient les femmes les plus en vue et les plus renommées pour leur
+               beauté à cette époque, en particulier l’une d’entre elles, <span data-key="aureliana" class="persName">Aureliana</span>. Nous arrivâmes le Lundi saint à deux heures de l’après-midi, et <span data-key="donaPrudencia" class="persName">Doña Prudencia</span>, voulant que je ne rate pas la procession, m’obligea à m’habiller et presque de force,
+               elle m’amena à un balcon de la rue royale pour rejoindre les Hernandez, qui étaient
+               déjà sorties de la maison.</div>
+            
+            
+            <div class="paragraphe">Quand je vis les balcons pleins de gens parés de leurs plus beaux habits, les balustrades
+               recouvertes de couvertures somptueuses, et que je me retrouvai parmi une multitude
+               de jeunes filles rieuses et espiègles, je me sentis profondément mélancolique et honteuse,
+               et j’aurais voulu être dans la forêt la plus éloignée de <span data-key="laHacienda" class="placeName">l’hacienda</span> de mon père.</div>
+            
+            
+            <div class="paragraphe">
+               
+               <div class="ldialogo">— La voici, <span data-key="aureliana" class="persName">Aureliana</span> ! exclama <span data-key="donaPrudencia" class="persName">Doña Prudencia</span>.</div>
+               
+               <div class="ldialogo">— Où ? demandai-je, désireuse de la connaître, car sa beauté hors du commun était
+                  au cœur de toutes les conversations.</div>
+               
+               <div class="ldialogo">— Celle qui vient entourée de plusieurs messieurs.</div>
+               
+               <div class="ldialogo">— Celle qui porte une robe en velours noir avec des ornements bleus et un voile en
+                  dentelle noire ?</div>
+               
+               <div class="ldialogo">— Non, celle-là, c’est <span data-key="sebastiana" class="persName">Sebastiana</span>, la sœur aînée. Celle qui vient derrière avec une robe en velours violet, des ornements
+                  en satin blanc et une mantille en dentelle blanche, c’est <span data-key="aureliana" class="persName">Aureliana</span>.</div>
+               </div>
+            
+            
+            <div class="paragraphe">Je crois qu’il n’y a jamais eu de femme plus belle ! Un corps élégant et raffiné,
+               une blancheur merveilleuse, des yeux qui brillaient comme des soleils, des lèvres
+               divinement formées qui découvraient des dents de perles… et pour finir, une allure
+               et une grâce inégalées. Elle monta immédiatement au balcon où j’étais, entourée d’un
+               groupe de jeunes filles, qui, telles des papillons, tournaient autour d’elle. Les
+               sourires, les regards tendres, les éloges les plus passionnés étaient pour <span data-key="aureliana" class="persName">Aureliana</span>. <span data-key="sebastiana" class="persName">Sebastiana</span> était aussi très belle, mais sa sœur captivait et faisait oublier toutes les autres.
+               Sa grâce, ses mouvements élégants, son sourire angélique, et un regard tantôt languide,
+               tantôt vivant, joyeux ou sentimental, tout en <span data-key="aureliana" class="persName">Aureliana</span> enchantait.</div>
+            
+            
+            <div class="paragraphe">Je retournai avec les Hernández chez elles, mais l'impression qu’Auréliana m'avait
+               faite était telle que je ne pouvais pas quitter mes yeux de son beau visage. Habituée
+               à ce que les autres femmes aient un regard envieux sur elle, la belle coquette comprit
+               ma simple admiration, elle me remercia et en m’appelant à ses côtés, me fit des gestes
+               d'affection en me flattant avec des mots affectueux. Au moment d'aller dans sa chambre,
+               elle m’amena avec elle en disant qu'elle me prenait sous sa protection pendant mon
+               séjour à <span data-key="bogota" class="placeName">Bogota</span>.</div>
+            
+            
+            <div class="paragraphe">La chambre était luxueusement meublée. Sur la table, on voyait les cadeaux qu'on lui
+               avait envoyés ce jour-là : des bijoux, des robes, des ornements chers, des pièces
+               de vaisselle, des fleurs naturelles et artificielles, des fruits rares et exquis…
+               Bref, là-bas, il y avait les objets les plus curieux qu'on pouvait trouver à <span data-key="bogota" class="placeName">Bogota</span>.</div>
+            
+            
+            <div class="paragraphe">— Est-ce aujourd'hui votre anniversaire ? lui demandai-je, étonnée de voir tant de
+               cadeaux.
+               — Non, me répondit-elle avec un air de triomphe. Mes sourires valent plus que tout
+               ce qu'on m'envoie en échange. Chacun de ceux qui se sont approchés de moi aujourd'hui,
+               au moment de comprendre l'un de mes caprices, ont voulu me faire plaisir en envoyant
+               ce que je souhaitais.
+               </div>
+            
+            
+            <div class="paragraphe">Un je ne sais quoi ironique et triste passa par son beau visage en prononçant ces
+               mots, et instinctivement, je sentis que cette existence de vanité me répugnait. Un
+               je ne sais quoi ironique et triste passa par son beau visage en prononçant ces mots,
+               et instinctivement, je sentis que cette existence de vanité me répugnait. </div>
+            
+            
+            <div class="paragraphe">Durant les deux semaines où je restai à <span data-key="bogota" class="placeName">Bogota</span>, je fis constamment avec <span data-key="aureliana" class="persName">Aureliana</span>, et au moment de dire au revoir, je vis une larme de sentiment briller entre ces
+               cils bouclés. Malgré les hommages de toutes les grandes figures de la république,
+               des fêtes qu'on lui offrait et des éloges qu'on lui prodiguait, l'admiration humble
+               d'une paysanne avait éveillé en son cœur une affection sincère.</div>
+            
+            
+            <div class="paragraphe">Quelques années plus tard, je me trouvais à <span data-key="tocaima" class="placeName">Tocaima</span>, auprès de mon père malade, quand on apprit que les Hernandez arriveraient dans les
+               jours qui suivaient. Cela fut un événement pour tous les habitants du village. <span data-key="aureliana" class="persName">Aureliana</span> était tombée malade. Quelle catastrophe ! On disait que le <span data-key="presidente" class="persName">président</span> prêterait son attelage pour traverser <span data-key="laSabana" class="placeName">la Sabana</span> et que les meilleurs chevaux de la capitale étaient mis à sa disposition. À <span data-key="laMesa" class="placeName">la Mesa</span>, on lui prépara une litière, au cas où elle préférerait ce moyen de transport. Enfin,
+               quand on apprit que la famille Hernández arriverait, les notables du village sortirent
+               pour l’accueillir.</div>
+            
+            
+            <div class="paragraphe">
+               On leur avait attribué la meilleure maison de <span data-key="tocaima" class="placeName">Tocaima</span>, et tout le monde envoya tout ce qu’il pensait que la malade pourrait avoir besoin.
+               Dès qu’<span data-key="aureliana" class="persName">Aureliana</span> apprit que j’étais dans le village, elle me fit appeler avec mille expressions affectueuses.
+               Je la trouvai pâle, mais belle comme d’habitude. Bien qu’elle fût accompagnée d’un
+               cortège assez nombreux de jeunes filles et d’amies de <span data-key="bogota" class="placeName">Bogota</span>, elle appréciait beaucoup ma compagnie, et nous passions une grande partie de la
+               journée ensemble.</div>
+            
+            
+            <div class="paragraphe">Un soir, un bal fut organisé dans le village pour célébrer le rétablissement d'<span data-key="aureliana" class="persName">Aureliana</span>, mais au moment de sortir, elle dit qu'elle ne se sentait pas suffisamment forte
+               pour assister au bal et qu'elle resterait à la maison. Et en effet, elle m'envoya
+               chercher pour que je l'accompagne cette soirée-là.</div>
+            
+            
+            <div class="paragraphe">Je la trouvai seule dans une petite chambre qu'on avait préparée pour elle avec ce
+               qu'il y avait de meilleur sur place. Une bougie, derrière un abat-jour, répandait
+               sa douce lumière dans la chambre et, au milieu des ombres, se détachait la silhouette
+               aérienne d'<span data-key="aureliana" class="persName">Aureliana</span>, qui, revêtue capricieusement d'une robe populaire, laissait ses bras sculptés découverts
+               et cachait partiellement son dos sous un tissu en linon blanc. Elle était allongée
+               sur un hamac, la tête appuyée sur son bras plié. De l'autre main, elle caressait ses
+               longues tresses de cheveux blonds qui contrastaient avec ses yeux bridés, noirs et
+               brillants.</div>
+            
+            
+            <div class="paragraphe">—  Bienvenue, <span data-key="mercedes" class="persName">Mercedes</span> ! dit-elle languidement en me voyant. <span data-key="madreDeAureliana" class="persName">Ma mère</span> et mes sœurs sont parties au bal, et je ne les ai pas accompagnées car je suis trop
+               fatiguée pour penser à des divertissements.
+               — Vous, fatiguée ? m’exclamai-je.
+               — Et pourquoi pas ? Le fiel n’est-il pas toujours présent dans toute coupe de bonheur
+               que nous vidons jusqu’au fond ?
+               —Mais quelle poétesse êtes-vous devenue ce soir.
+               —Ce n'est pas de moi, cette phrase me l’a apprise <span data-key="gabriel" class="persName">Gabriel</span> l'écrivain, un de mes adorateurs.
+               —Mais vous ne devriez pas même en plaisantant vous plaindre de votre sort. 
+               — Je ne me plains pas. J'ai obtenu des autres tout ce que j'ai voulu… mais… 
+               — Comment ça ? M’exclamai-je. Ne vous suffit-il pas encore tant d'adoration ; tant
+               d'amour comme celui qui vous entoure ?
+               — Assieds-toi à côté de moi, <span data-key="mercedes" class="persName">Mercedes</span>, me dit-elle en me tutoyant soudainement : je ne sais pas pourquoi j’ai tant de prédilection
+               pour toi. Puis elle ajouta à voix basse : peut-être est-ce parce que tu es la seule
+               femme (je n’exclus même pas mes sœurs) qui ne s’est pas montrée envieuse de moi… Ah
+               ! s’exclama-t-elle avec tristesse, qu’elles ont si peu de raison de l’être ! 
+               </div>
+            
+            
+            <div class="paragraphe">Je ne savais pas quoi lui répondre et je restai en silence.</div>
+            
+            
+            <div class="paragraphe">— Dis-moi, ajouta-t-elle, sais-tu ce que c’est d’aimer ?</div>
+            
+            
+            <div class="paragraphe">Je baissai les yeux sans répondre : je savais ce qu'était d’aimer mais ce sentiment,
+               je le gardais dans mon cœur comme un secret.</div>
+            
+            
+            <div class="paragraphe">
+               — Tu ne me réponds pas ? … Ce n'est pas une question vaine ni une curiosité féminine,
+               je veux savoir la vérité… Je voudrais comprendre ce qu'il y a dans un autre cœur…
+               
+               — Il y a deux ans, répondis-je, que je suis fiancée, et cela n’a jamais été un fardeau.
+               Cela vous suffira pour comprendre que je sais ce qu'est d’aimer.
+               — Tu es plus heureuse que moi alors, répondit-elle en posant affectueusement sa main
+               sur la mienne. Je n’ai jamais pu vraiment aimer. Voilà la blessure secrète de mon
+               âme. J’ai près de trente ans, et je ne sais pas ce que signifie aimer avec le cœur,
+               avec abnégation, avec tendresse ! Ma vanité fut flattée mille fois, mon imagination
+               s’est enflammée ; mais mon cœur n’a jamais su, ni pu, aimer sincèrement. Jamais je
+               n’ai tout oublié pour l’être aimé : je n’ai jamais trouvé de paix ni de bonheur complet
+               auprès d’un seul. On me dit qu’aimer, c’est vivre en pensant sans cesse à l’être chéri,
+               en l’associant à chaque instant de notre vie, son nom étant le premier mot au réveil,
+               et lui, notre dernière pensée avant de nous endormir… Aimer doit être comme vivre
+               dans un monde à part, où l’on ressent des émotions ineffables de suprême tendresse…
+               Dis-moi, est-ce ainsi que tu aimes ?
+               — Vous avez décrit mes sentiments les plus profonds. Cependant, ajoutai-je, aimer
+               est aussi souffrir. N’êtes-vous pas plus heureuse avec votre tranquillité ?
+               — Non, ma fille : il y a plus de bonheur à aimer qu'à être aimé, m'a dit beaucoup
+               de fois <span data-key="vicente" class="persName">Vicente</span> le poète et je le crois. J'avais à peine quatorze ans quand j'ai compris pour la
+               première fois que ma beauté inspirait l'amour et accablait. Enchantée, j'ai cru lui
+               correspondre pendant quelques jours, pauvre <span data-key="mariano" class="persName">Mariano</span> ! L'illusion passa quand un autre de meilleure allure s'est rapproché de moi. J'ai
+               cru m'être trompée dans ma première liaison et je l'ai rejetée pour accueillir la
+               deuxième. Mais la même histoire se produit avec celle-ci et les autres. À ce moment-là,
+               je connaissais l'importance de chacun de mes mots, même le plus insignifiant ; de
+               mes regards même les plus vagues ; et je te l'avoue, je suis devenue une coquette
+               avec un cœur vide et une imagination ardente – la société entière était tombée à mes
+               pieds : aucune femme ne pouvait rivaliser avec moi. Les mots d'adoration que j'entendais
+               ne causaient aucune impression à mon cœur : je le recevais avec froideur, mais j'y
+               répondais avec une fausse tendresse.
+               </div>
+            
+            <button onclick="showNextSection('section-fr-1')"><i>À suivre</i></button><div class="signature" id="signature-d3e347">ALDÉBARAN.</div>
+         </div>
+         <div id="section-fr-2" class="conte-section">
+            
+            
+            <div class="head">
+               
+               <div class="ltitulo">LA LUMIÈRE ET L’OMBRE.</div>
+               
+               <div class="ltitulo">(Suite)</div>
+               </div>
+            
+            
+            <div class="paragraphe">Instinctivement, je m’éloignai d’<span data-key="aureliana" class="persName">Aureliana</span>. Cette femme si froide et si belle m’horrifiait. Son cœur semblait une de ces montagnes
+               enneigées dont le sommet n’a jamais été atteint par les voyageurs.</div>
+            
+            
+            <div class="paragraphe">
+               — Une fois, poursuivit-elle sans prêter attention à mon geste de répulsion, 
+               j’ai compris qu’au sein du cercle d’admirateurs qui m’entourait, 
+               il y avait un jeune homme qui critiquait ma manière d’être et 
+               qui ne ressentait aucune admiration pour moi. 
+               Cela m’a d’abord choquée, puis finalement blessée. 
+               <span data-key="fernando" class="persName">Fernando</span>, c’était son nom, 
+               se montrait toujours sérieux et sévère avec moi, et il eut même 
+               parfois l’audace de me critiquer ouvertement. Sa froideur et 
+               ses reproches me causèrent tant de déplaisir que je décidai 
+               de le conquérir coûte que coûte. Sans le lui manifester clairement, 
+               je déployai tous mes charmes, me montrant si attentionnée 
+               que je vis bientôt que mes efforts avaient eu un effet sur lui. 
+               Mais bien que ses manières fussent celles d’un homme galant, 
+               il ne se manifestait pas épris. « S’il ne succombe pas », pensai-je, 
+               « c’est un homme supérieur et digne d’un véritable amour ». 
+               Pourtant, <span data-key="fernando" class="persName">Fernando</span> ne cherchait pas 
+               particulièrement ma compagnie, même s’il ne me blâmait plus comme auparavant, 
+               et il osait de parler devant moi de la beauté d’autres femmes. 
+               Malheureusement, mon caractère est inconstant, et mon enthousiasme, 
+               qui ne dure qu’un instant, cède devant la moindre difficulté. 
+               Je n’aurais pas voulu le voir à mes pieds, 
+               mais mon amour-propre ne supportait pas qu’il admirait d’autres femmes. 
+               Entre-temps, de nouvelles conquêtes et distractions captèrent mon attention, 
+               et j’oubliai ce noble projet, à peine formé, 
+               de savourer un amour secret, même s’il n’était pas réciproque. 
+               — Mais quel caractère étrange vous avez ! 
+               Mais continuez, qu'est-il arrivé à <span data-key="fernando" class="persName">Fernando</span> ?
+               — Tu vas l’entendre. Il y a quelques mois, 
+               le Libertador a donné un bal dans une villa située 
+               aux environs de <span data-key="bogota" class="placeName">Bogota</span>. 
+               La nuit était splendide, et la lune éclairait les jardins. 
+               Fatiguée du bruit et désireuse de me retrouver seule 
+               pour lire une lettre qu’on m’avait remise mystérieusement, 
+               je me suis éclipsée de la maison sans être vue, 
+               et je me suis dirigée vers un pavillon situé au fond du jardin, 
+               où je savais que je trouverais à la fois lumière et solitude. 
+               Enveloppée dans un épais châle qui me protégeait du froid nocturne, 
+               j’ai traversé rapidement le jardin et emprunté un sentier ombragé 
+               par des arbustes, traversé par un ruisseau 
+               qui descendait bruyamment de la colline voisine. 
+               Le contraste entre le tumulte, les lumières, la musique, 
+               et l’agitation du bal avec le paysage calme que je traversais, 
+               me plongea dans une étrange mélancolie, inhabituelle pour moi.
+               Une lampe suspendue au plafond éclairait le pavillon : en y arrivant, 
+               je me laissai tomber sur un canapé, et un soupir m’échappa. 
+               Un autre soupir résonna en écho près de moi. 
+               En me tournant vers la porte, j’aperçus un homme debout. 
+               Mécontente de cet espionnage importun, 
+               j’étais sur le point de réprimander celui qui avait troublé ma solitude,
+               lorsque, en ôtant son manteau, il révéla le visage pâle et fascinant 
+               de <span data-key="fernando" class="persName">Fernando</span>.
+               </div>
+            
+            
+            <div class="paragraphe">— <span data-key="fernando" class="persName">Fernando</span>, dis-je, c'est vous ?
+               — Vous avez raison d'être surprise Auréliana : 
+               vous ne deviez pas me retrouver ici, dit-il ; 
+               et en me prenant la main qu’instinctivement je lui tendais, 
+               il imprima ses lèvres sur elle. 
+               Pourquoi lutter encore ? ajouta-t-il en s'asseyant à mes côtés. 
+               Pourquoi faire semblant d'être désintéressé quand 
+               je ne peux que vous adorer ?
+               </div>
+            
+            
+            <div class="paragraphe">Je ne sais pas si le cœur de toutes les femmes est égal au mien, mais au lieu de me
+               sentir chanceuse de cette conquête que j’avais désirée antérieurement, mon cœur resta
+               tranquille et indifférent. La désillusion la plus profonde m’envahit quand je compris
+               que je n'étais pas capable d'aimer le seul homme que j'avais tant admiré et au lieu
+               de lui répondre comme j'aurais fait à n'importe quel autre, je baissai la tête en
+               silence et avec amertume je pensai que tous les hommes étaient égaux vu qu'il suffisait
+               de flatter leur vanité pour les voir vaincus.</div>
+            
+            
+            <div class="paragraphe"><span data-key="fernando" class="persName">Fernando</span> me raconta alors l’histoire de son amour. Il me confia que lorsqu’il m’avait rencontrée,
+               il avait d’abord ressenti une certaine répulsion et de la haine envers moi, et qu’il
+               regardait avec dédain tous ceux qui s’humiliaient devant moi. Mais le désir que je
+               lui avais manifesté d’écouter ses conseils et de lui plaire, au lieu de m’offenser
+               pour ses censures, l’avait surpris. Peu à peu, sa haine s’était muée en une véritable
+               affection, puis en un amour violent. Dégoûté et humilié, comprenant qu’il n’avait
+               pas la force de se défendre, il avait lutté longtemps pour vaincre son inclination.
+               Enfin, il décida de me fuir et demanda qu’une lettre me soit remise cette soirée-là.
+               C’était un tendre adieu.</div>
+            
+            
+            <div class="paragraphe">Je réussis à faire que <span data-key="fernando" class="persName">Fernando</span> ne partît pas. Je désirais éveiller dans mon cœur cet intérêt que je croyais ressentir
+               pour lui pendant un certain temps. Aimer doit être si beau ! Bientôt <span data-key="fernando" class="persName">Fernando</span> lui-même découvrit que je cherchais à me mentir à moi-même et que je ne pourrais
+               jamais l'aimer. Cependant, je sentais perdre un cœur si noble et je voulus le convaincre
+               que je l'aimais mais il ne se mentit pas à lui-même, et il prit congé résigné et triste,
+               bien qu'il ne se montrât pas blessé dans son amour-propre. Il y a un mois, j’appris
+               qu'il était mort à <span data-key="cartagena" class="placeName">Carthagène</span> lors d'un duel à cause de moi, en me défendant des calomnies que propageait contre
+               moi un officier que j'avais dédaigné. Cette mort me cause parfois des remords. Mais
+               ce n'est pas ma faute si je ne pouvais pas l'aimer ! Je ne lui ai jamais dit que je
+               ne lui correspondais pas…</div>
+            
+            
+            <div class="paragraphe">— La voilà l'erreur ! 
+               — Peut-être ; car il me disait que mes regards et mes expressions d'affection lui
+               avaient fait concevoir des espoirs et il croyait par moments que je ne le regardais
+               pas avec indifférence. Sans cette idée-là, il ne m'aurait jamais aimée.
+               — Pauvre homme ! m’exclamai-je. Malchanceux celui qui vous aime.
+               — Ne dis pas ça, me répondit Auréliana avec amertume. Celui qui aime est récompensé
+               par le doux sentiment qui l’anime. Parfois, je me sentis inspirée par des éclairs,
+               malheureusement passagers, d’une tendresse qui a gonflé mon cœur, ennobli mon âme
+               et rempli mon esprit de belles pensées. Mais combien ces instants ont été courts !
+               J’ai passé mes journées à chercher avec persévérance l’amour, le seul véritable objet
+               de la vie d’une femme, mais à sa place, je n’ai trouvé que des désillusions et du
+               vide. Ne crois pas que la coquetterie dont on m’accuse, peut-être à juste titre, soit
+               le fruit d’un cœur perverti ; ne le crois pas : c’est que je cherche partout un idéal
+               qui m’échappe inlassablement.
+               </div>
+            
+            
+            <div class="paragraphe">Le langage choisi, même s'il manquait d'une vraie profondeur mais qui distinguait
+               <span data-key="aureliana" class="persName">Aureliana</span>, la rendait extrêmement agréable cependant elle ne parlait que d'elle-même de manière
+               éloquente. </div>
+            
+            
+            <div class="paragraphe">Parfois, l'écho lointain de la musique du bal auquel <span data-key="aureliana" class="persName">Aureliana</span> avait refusé de participer arrivait jusqu'à nos oreilles. Elle sortit sa montre à
+               gousset (un objet rare à cette époque-là) qui pendait d'une grosse chaîne qu'elle
+               avait autour de son cou. Il était minuit.</div>
+            
+            
+            <div class="paragraphe">— Cette nuit, je ne pourrai pas dormir, dit-elle en soupirant. La conversation que
+               nous avons eue m'a causé une énorme tristesse et m'a rappelé des scènes que je voudrais
+               oublier. <span data-key="fernando" class="persName">Fernando</span> n'est pas le seul qui s'est perdu à cause de moi.</div>
+            
+            
+            <div class="paragraphe">Mes sœurs et mes amies seront joyeuses et triomphantes sans ma présence à cette soirée
+               ! s’exclama-t-elle un moment après, en se mettant debout et en se regardant dans un
+               miroir qu'elle avait au niveau des oreillers sur son lit. Il aurait été mieux de passer
+               notre temps au bal. Tu veux y aller ? … Quoi ! ajouta-t-elle, en voyant le sérieux
+               avec lequel j’accueillais une proposition si insensée. Quoi !  Tu t'es laissé impressionner
+               par ma causette sentimentale ? Bah ! Ça, c'est passager. Viens au bal !</div>
+            
+            
+            <div class="paragraphe">— Moi, me présenter à cette heure ? Impossible. 
+               — Nous demanderons à quelqu'un de nous accompagner. 
+               — Je ne peux pas, je ne veux pas. Pardonnez-moi mais…
+               — Je ne veux pas t'obliger, répondit-elle. 
+               Moi, j’irai, mon système consiste à 
+               ne jamais me laisser emporter par la tristesse, 
+               et à tout prix, la combattre. 
+               </div>
+            
+            
+            <div class="paragraphe">Elle ne voulut porter aucun ornement. Elle lâcha sa blonde chevelure, elle mit un
+               lacet bleu autour de sa tête, elle s’enveloppa gracieusement dans un châle de la même
+               couleur et appelant <span data-key="negroEsclavo" class="persName">un esclave noir</span>, elle lui demanda d'appeler quelqu'un qui vînt l’accompagner au bal. </div>
+            
+            
+            <div class="paragraphe">Tandis que les galants anxieux arrivaient pour obéir à son ordre, elle me fit allonger
+               sur le lit et elle prit affectueusement congé à son départ. Je restai terrifiée des
+               révélations qu'elle m'avait faites, et étonnée des caprices de cette femme si bizarre
+               et... si malheureuse.</div>
+            
+            
+            <div class="paragraphe">Après quelques jours, la famille Hernandez retourna à <span data-key="bogota" class="placeName">Bogota</span> ; et près de trente années se passèrent sans que je revoie <span data-key="aureliana" class="persName">Aureliana</span> ou que je n'en aie que de vagues nouvelles auxquelles je n'ai pas fait attention.
+               
+               </div>
+            
+            
+            <button onclick="showNextSection('section-fr-2')"><i>Conclusion</i></button><div class="signature" id="signature-d3e484">ALDÉBARAN</div>
+         </div>
+         <div id="section-fr-3" class="conte-section">
+            
+            <div class="head">
+               
+               <div class="ltitulo">LA LUMIÈRE ET L’OMBRE</div>
+               
+               <div class="ltitulo">(Conclusion)</div>
+               
+               <div class="ltitulo">II.</div>
+               
+               <div class="ltitulo">LA VIEILLESSE.</div>
+               </div>
+            
+            
+            <div class="paragraphe">Je me mariai, mes enfants grandirent et à leur tour, ils m’entourèrent de petits-enfants.</div>
+            
+            
+            <div class="paragraphe">Je voyais ma jeunesse au loin, comme un rêve évanoui, mais j’étais satisfaite de mon
+               humble destinée.</div>
+            
+            
+            <div class="paragraphe">Un après-midi, je me reposais assise à la porte de ma maison.
+               La journée avait été très chaude, 
+               rendant l’ombre des arbres d’autant plus désirable, 
+               et rafraîchissant ma chambre joyeuse. 
+               Soudain, je vis sortir de l’auberge du village 
+               une dame âgée, courbée par les années et les maux, s’appuyant sur le bras d’<span data-key="negroEsclavo" class="persName">un vieil homme noir</span>. Après avoir hésité un instant, suivant la direction qu’il lui indiquait, elle se
+               dirigea vers moi avec une extrême lenteur et difficulté.</div>
+            
+            
+            <div class="paragraphe">Quand elle arriva à l’endroit où j’étais, elle s’arrêta et, d’une voix faible et triste,
+               me dit :</div>
+            
+            
+            <div class="paragraphe">— Me connais-tu, <span data-key="mercedes" class="persName">Mercedes</span> ?
+               — Non, je ne me souviens pas…
+               — Mais peut-être tu n’aurais pas oublié <span data-key="aureliana" class="persName">Aureliana Hernández</span>, n’est-ce pas ?
+               — <span data-key="aureliana" class="persName">La señora Aureliana</span> ! Est-ce possible ?
+               — C’est moi !                                </div> 
+            
+            
+            <div class="paragraphe">Je la regardai, pleine de stupéfaction. Il ne restait plus la moindre trace de sa singulière beauté. Elle semblait avoir plus de soixante-dix ans : sa peau, ridée par les artifices
+               de beauté et peut-être aussi par les souffrances, était ridée et jaunâtre ; ses yeux,
+               si brillants dans sa jeunesse, étaient maintenant troubles et rougis ; son corps voûté
+               et sa démarche lente et laborieuse indiquaient que les peines d’une longue maladie
+               l’avaient vieillie encore plus que le poids des années.</div>
+            
+            
+            <div class="paragraphe">Immédiatement, je la fis entrer et, 
+               me souvenant de l’affection qu’elle m’avait 
+               témoignée autrefois, je lui prodiguai tous 
+               les soins possibles, cherchant à lui faire oublier 
+               l’isolement dans lequel je la trouvais. 
+               Je n’osais pas lui demander des nouvelles de sa famille, 
+               qui l’abandonnait ainsi dans la vieillesse, elle, 
+               qui avait été si admirée dans sa jeunesse.</div>
+            
+            
+            <div class="paragraphe">Demandant la raison qui l’avait amenée à <span data-key="lugarOculto" class="placeName">***</span>, elle me répondit :</div>
+            
+            
+            <div class="paragraphe">— Mes maladies, et l’ordre des médecins.
+               — Et votre famille est à <span data-key="bogota" class="placeName">Bogota</span> ?
+               — Oui, ils y sont tous.
+               — Et <span data-key="hijaDeAureliana" class="persName">votre fille</span>, pourquoi ne vous accompagne-t-elle pas ?
+               — La pauvre, dit-elle avec un sourire de résignation, est sur le point de se marier,
+               et ce n’était pas juste qu’elle abandonne son fiancé pour venir auprès d’une invalide
+               comme moi.
+               — Et <span data-key="esposoDeAureliana" class="persName">Monsieur N***</span>, votre époux ?
+               — Le climat chaud lui est néfaste.
+               — Et vos deux fils ?
+               — Leurs affaires ne leur permettent pas de venir à la campagne. Mais celui qui est venu m’accompagner, c’est <span data-key="negroEsclavo" class="persName">le Noir</span>, <span data-key="negroEsclavo" class="persName">le même esclave</span> que tu avais connu chez moi, et le seul qui comprenne et supporte mes caprices. Lui,
+               il n’a jamais voulu m’abandonner malgré sa liberté.
+               </div>
+            
+            
+            <div class="paragraphe">Un ancien esclave loyal était le seul et l’unique soutien qui lui restait, à cette
+               femme autrefois tant célébrée. Mon cœur se serrait en l’entendant, et mes yeux s’emplirent
+               de larmes en contemplant une vieillesse si triste après une jeunesse si brillante.</div>
+            
+            
+            <div class="paragraphe"><span data-key="aureliana" class="persName">Aureliana</span> passa un mois chez moi, entourée de soins, me dit-elle, comme elle ne l’avait pas
+               été depuis longtemps. Les longues conversations que nous eûmes me firent comprendre
+               que la seconde partie de sa vie avait été une terrible expiation de la vanité folle
+               de la première. Petit à petit, elle me révéla les secrets les plus douloureux de sa
+               vie.</div>
+            
+            
+            <div class="paragraphe">Mariée à la fin de sa jeunesse à un homme 
+               qu’elle n’aimait pas et qui ne l’aimait pas, 
+               elle découvrit bientôt qu’il n’avait cherché 
+               qu’à profiter de sa richesse. 
+               Elle s’aperçut avec effroi que sa beauté 
+               disparaissait progressivement. Sans éducation 
+               approfondie, sans aucune instruction, elle perdit 
+               cette beauté qui était son seul atout, 
+               et ses admirateurs l’abandonnèrent peu à peu. 
+               Elle voyait avec inquiétude que sa présence 
+               ne suscitait plus d’émotion et que les regards 
+               des invités aux fêtes où elle se rendait ne se posaient plus sur elle. 
+               Désireuse alors de quitter le théâtre de ses premiers triomphes, 
+               elle accompagna son époux avec plaisir 
+               aux <span data-key="estadosUnidos" class="placeName">États-Unis</span>, 
+               mais là-bas, elle se sentit encore plus méprisée. 
+               Désespérée, elle s’efforça par tous les moyens 
+               de retrouver sa beauté perdue et passait de 
+               longues heures devant son miroir, se parant de 
+               tout l’art qu’une expérience consommée lui avait enseigné. 
+               Par moments, son miroir lui renvoyait l’image de 
+               l’<span data-key="aureliana" class="persName">Aureliana</span> de sa jeunesse, 
+               et emplie d’illusions et d’espoir, elle se 
+               présentait aux fêtes et aux bals… Mais les autres 
+               la regardaient comme on regarde une ruine blanchie et repeinte. 
+               D’autres, pas très belles mais plus jeunes, remportaient la palme.</div>
+            
+            
+            <div class="paragraphe">Combien étaient les désillusions si cruelles
+               de cette pauvre femme qui avait fondé sa vie sur ses attraits 
+               personnels ! Elle traversait des moments d’abattement où 
+               elle priait Dieu de la faire mourir plutôt que de cesser d’être admirée.</div>
+            
+            
+            <div class="paragraphe">Dans ces luttes, dans cet acharnement, 
+               elle passa plusieurs années avant de finir par 
+               se convaincre de l’inutilité de ses efforts. 
+               Les eaux, les fards et les cosmétiques avec 
+               lesquels elle tenta de raviver sa fraîcheur 
+               perdue anéantirent les restes de ses couleurs 
+               et ternirent la blancheur de son teint ; les maladies 
+               éteignirent prématurément l’éclat de ses yeux et détruisirent 
+               sa belle chevelure, et, par surcroît, les larmes, les désillusions 
+               et les peines domestiques ravagèrent le dernier vestige de sa beauté singulière.</div>
+            
+            
+            <div class="paragraphe">Lorsque ses enfants étaient petits, ils avaient été abandonnés par <span data-key="aureliana" class="persName">leur mère</span>, 
+               qui courait après ses derniers triomphes ; et ainsi, 
+               elle perdit cette première affection filiale si pure et si belle. 
+               D’ailleurs, les paroles dédaigneuses de <span data-key="esposoDeAureliana" class="persName">Monsieur N***</span> avaient fait naître dans le cœur de leurs enfants un sentiment d’indifférence complète
+               envers <span data-key="aureliana" class="persName">leur mère</span> mal aimée et peu respectée.</div> 
+            
+            
+            <div class="paragraphe">Quand enfin <span data-key="aureliana" class="persName">Aureliana</span> se convainquit que 
+               ses derniers crépuscules de vanité mondaine étaient finis, elle se retourna vers les
+               enfants, 
+               mais ils reçurent avec contrariété ses expressions d'affection, ils crurent qu'il s'agissait
+               
+               d'un des nombreux caprices passagers dont leur père l'accusait au quotidien et remplis
+               de froideur, ils n'y ont pas fait attention.</div> 
+            
+            
+            <div class="paragraphe"><span data-key="aureliana" class="persName">Aureliana</span> était en effet impertinente et capricieuse, le résultat naturel 
+               et inévitable de sa mauvaise éducation et de la vie qu'elle avait menée durant sa
+               jeunesse. 
+               Pour se consoler de ses malheurs présents, elle ne cessait de parler de sa beauté
+               passée et des 
+               triomphes de sa jeunesse, ajoutant ainsi à la vacuité de ses idées une loquacité ridicule,
+               et 
+               ruinant ainsi son caractère maternel comme sa beauté de courtisane.</div> 
+            
+            
+            <div class="paragraphe">Souffrant continuellement de maladies, sa famille l'envoya changer de climat, accompagnée
+               
+               seulement du <span data-key="negroEsclavo" class="persName">Noir</span>. Après avoir été adorée dans sa jeunesse par 
+               tous ceux qui l'approchaient, après s'être habituée à ce que tout le monde s'inclinât
+               devant le moindre 
+               de ses caprices et à ce que le moindre de ses malaises fût une calamité publique,
+               à présent, véritablement 
+               malade et affaiblie, elle se voyait abandonnée, même par ceux qui avaient le devoir
+               de lui assurer un certain confort.</div> 
+            
+            
+            <div class="paragraphe"><span data-key="aureliana" class="persName">Aureliana</span> mourut il y a peu de temps à <span data-key="bogota" class="placeName">Bogota</span>, oubliée et pleurée de personne. 
+               On m'a dit qu'au milieu de ses souffrances, elle parlait encore de ses anciens triomphes et de sa
+               beauté. La vanité et les souvenirs mondains de ses premières années l'accompagnèrent
+               jusqu'aux portes de la tombe, dont la proximité ne lui inspira aucune pensée sérieuse.
+               Elle mourut comme elle avait vécu : sans jamais songer à son âme, peut-être même en ignorant qu'elle en avait une !</div> 
+            
+            
+            <div class="paragraphe">Cet épisode m’a été rapporté il y a peu par <span data-key="venerableMatrona" class="persName">une vénérable matrone</span> de <span data-key="lugarOculto" class="placeName">***</span> et m’a prouvé une fois de plus combien une éducation soignée et une instruction saine
+               sont indispensables à la femme : elles enrichissent son esprit, adoucissent ses désillusions
+               et lui apprennent à mépriser les vanités de la vie. Les commentaires et réflexions
+               sont ici inutiles : la leçon se comprend d’elle-même à travers ces faits, bien trop
+               vrais pour l’honneur de ce que nous appelons, à la française, « la société de bon
+               ton ».</div>
+            
+            
+            <button onclick="showNextSection('section-fr-3')"><i>Fin</i></button><div class="signature" id="signature-d3e699">ALDÉBARAN.</div>
+         </div>
+      </div>
+      <div id="map-modal" class="map-modal"><span class="map-close" onclick="closeMap()">×</span><div id="map-container"></div>
+      </div>
+      <footer class="foot">
+         <p class="footer-texto">
+            Édition numérique créée par Yury Nataly Garzón Díaz.
+            </p>
+         <div class="footer-logos"><img src="rouen.jpg" alt="logo université de Rouen"><img src="normandie1.jpg" alt="logo Normandie"></div>
+      </footer>
+   </body>
+</html>

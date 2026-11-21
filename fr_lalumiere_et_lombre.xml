@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="transf_luzisombra.xsl"?>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+    xmlns:ns2="http://www.tei-c.org/ns/Examples"
+    xmlns:ns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Encodage du conte : La lumière et l'ombre de Soledad Acosta</title>
+            </titleStmt>
+            <publicationStmt>
+                <p>Usage universitaire uniquement</p>
+            </publicationStmt>
+            <sourceDesc>
+                <biblStruct>
+                    <monogr>
+                        <title>Luz i sombra</title>
+                        <author>Soledad Acosta de Samper</author>
+                        <editor>Imprenta Constitucional, por N. Pontón, 1866-1868</editor>
+                        <respStmt xml:id="NGD">
+                            <name>Nataly Garzón Díaz</name>
+                            <resp>Encodage</resp>
+                        </respStmt>
+                        <imprint>
+                            <pubPlace>Bogotá</pubPlace>
+                            <date>1866</date>
+                        </imprint>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        
+        <encodingDesc>
+            <projectDesc>
+                <p>Cet encodage est réalisé dans le cadre du projet de mémoire pour obtenir le diplôme Master Humanités numériques - parcours éditions numériques de l'Université de Rouen Normandie</p>
+            </projectDesc>
+            <editorialDecl>
+                <p>Le texte d'origine est conservé. Il s'agit de la collection du journal imprimée.</p>
+            </editorialDecl>
+        </encodingDesc>
+        
+        <profileDesc>
+            <langUsage>
+                <language ident="fr">Français</language>
+            </langUsage>
+            <textClass>
+                <keywords>
+                    <term>Conte</term>
+                    <term>Littérature colombienne -- 19e siècle</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        
+        <revisionDesc>
+            <change when="2024-10-10" who="#NGD">Création du fichier et encodage des métadonnées</change>
+        </revisionDesc>
+        
+    </teiHeader>
+    
+    <text>
+        <body>
+            <div type="journalElIris">
+                <pb n="122"/>
+                <fw type="pageNum">122</fw><fw type="header">EL IRIS</fw>
+            
+                <div type="conte">
+                    <div type="laJeunesse">
+                        <div type="premiere_livraison" rend="À suivre">
+                            
+                            <head>
+                                <l>LA LUMIÈRE ET L’OMBRE.</l>
+                                <l>(Des scènes de la vie d’<seg corresp="#aureliana">une coquette</seg>).</l>
+                                <l>I.</l>
+                                <l>LA JEUNESSE </l>
+                            </head>
+                            
+                            <p xml:id="p1"><placeName key="santander" corresp="#coord_santander">Santander</placeName><geo xml:id="coord_santander">6.65877964259512, -73.53697166231863</geo> brillait dans toute sa gloire militaire, dans la splendeur de ses triomphes et à l’apogée de sa jeunesse et de sa prestance. <orgName key="pueblo">Le peuple</orgName> se réjouissait de sa patrie nouvellement acquise, et la joie ainsi que la satisfaction qu'éveille le sentiment d'une liberté noblement conquise se lisaient sur tous les visages.   
+                            </p>
+                                
+                            <p xml:id="p2">Je comptais <seg corresp="#mercedes">quatorze ou quinze ans</seg>. <seg corresp="#mercedes">J’avais perdu <persName key="madreDeMercedes">ma mère</persName> peu de temps auparavant</seg>, et mon père, me voyant <seg corresp="#mercedes">triste</seg> et <seg corresp="#mercedes">abattue</seg>, voulut que, accompagnée par une femme respectable, je visite <placeName key="bogota" corresp="#coord_bogota">Bogota</placeName><geo xml:id="coord_bogota">4.7132921631617695, -74.08173126420829</geo> et assiste aux processions de la Semaine sainte, qui s’annonçaient particulièrement solennelles cette année-là. En ce temps, le peuple confondait toujours le sentiment religieux avec les événements politiques, et pendant la Semaine sainte, chacun cherchait à exprimer sa reconnaissance envers celui qui nous avait libérés du joug de <placeName key="espana" corresp="#coord_espana">l’Espagne</placeName><geo xml:id="coord_espana">40.463667, -3.749220</geo>.</p>
+                            
+                            <p xml:id="p3"><seg corresp="#mercedes">Triste</seg>, <seg corresp="#mercedes">découragée</seg>, <seg corresp="#mercedes">timide</seg> et <seg corresp="#mercedes">introvertie</seg>, j’arrivai dans la maison des <orgName key="lasHernandez">Señoritas Hernandez</orgName>, où ma compagne de voyage, <persName key="donaPrudencia">Doña Prudencia</persName>, avait l’habitude de descendre de sa monture à <placeName key="bogota" corresp="#coord_bogota">Bogota</placeName>. Les Hernandez étaient les femmes les plus en vue et les plus renommées pour leur beauté à cette époque, en particulier l’une d’entre elles, <persName key="aureliana">Aureliana</persName>. Nous arrivâmes le Lundi saint à deux heures de l’après-midi, et <persName key="donaPrudencia">Doña Prudencia</persName>, voulant que je ne rate pas la procession, m’obligea à m’habiller et presque de force, elle m’amena à un balcon de la rue royale pour rejoindre les Hernandez, qui étaient déjà sorties de la maison.</p>
+                            
+                            <p xml:id="p4">Quand je vis les balcons pleins de gens parés de leurs plus beaux habits, les balustrades recouvertes de couvertures somptueuses, et que je me retrouvai parmi une multitude de jeunes filles rieuses et espiègles, je me sentis profondément mélancolique et honteuse, et j’aurais voulu être dans la forêt la plus éloignée de <placeName key="laHacienda">l’hacienda</placeName> de mon père.</p>
+                            
+                            <p xml:id="p5">
+                                <l>— La voici, <persName key="aureliana">Aureliana</persName> ! exclama <persName key="donaPrudencia">Doña Prudencia</persName>.</l>
+                                <l>— Où ? demandai-je, désireuse de la connaître, car sa beauté hors du commun était au cœur de toutes les conversations.</l>
+                                <l>— Celle qui vient entourée de plusieurs messieurs.</l>
+                                <l>— Celle qui porte une robe en velours noir avec des ornements bleus et un voile en dentelle noire ?</l>
+                                <l>— Non, celle-là, c’est <persName key="sebastiana">Sebastiana</persName>, la sœur aînée. Celle qui vient derrière avec une robe en velours violet, des ornements en satin blanc et une mantille en dentelle blanche, c’est <persName key="aureliana">Aureliana</persName>.</l>
+                            </p>
+                            
+                            <p xml:id="p6">Je crois qu’il n’y a jamais eu de femme plus belle ! Un corps élégant et raffiné, une blancheur merveilleuse, des yeux qui brillaient comme des soleils, des lèvres divinement formées qui découvraient des dents de perles… et pour finir, une allure et une grâce inégalées. Elle monta immédiatement au balcon où j’étais, entourée d’un groupe de jeunes filles, qui, telles des papillons, tournaient autour d’elle. Les sourires, les regards tendres, les éloges les plus passionnés étaient pour <persName key="aureliana">Aureliana</persName>. <persName key="sebastiana">Sebastiana</persName> était aussi très belle, mais sa sœur captivait et faisait oublier toutes les autres. Sa grâce, ses mouvements élégants, son sourire angélique, et un regard tantôt languide, tantôt vivant, joyeux ou sentimental, tout en <persName key="aureliana">Aureliana</persName> enchantait.</p>
+                            
+                            <p xml:id="p7">Je retournai avec les Hernández chez elles, mais l'impression qu’Auréliana m'avait faite était telle que je ne pouvais pas quitter mes yeux de son beau visage. Habituée à ce que les autres femmes aient un regard envieux sur elle, la belle coquette comprit ma simple admiration, elle me remercia et en m’appelant à ses côtés, me fit des gestes d'affection en me flattant avec des mots affectueux. Au moment d'aller dans sa chambre, elle m’amena avec elle en disant qu'elle me prenait sous sa protection pendant mon séjour à <placeName key="bogota">Bogota</placeName>.</p>
+                            
+                            <p xml:id="p8">La chambre était luxueusement meublée. Sur la table, on voyait les cadeaux qu'on lui avait envoyés ce jour-là : des bijoux, des robes, des ornements chers, des pièces de vaisselle, des fleurs naturelles et artificielles, des fruits rares et exquis… Bref, là-bas, il y avait les objets les plus curieux qu'on pouvait trouver à <placeName key="bogota">Bogota</placeName>.</p>
+                            
+                            <p xml:id="p9">— Est-ce aujourd'hui votre anniversaire ? lui demandai-je, étonnée de voir tant de cadeaux.
+                                — Non, me répondit-elle avec un air de triomphe. Mes sourires valent plus que tout ce qu'on m'envoie en échange. Chacun de ceux qui se sont approchés de moi aujourd'hui, au moment de comprendre l'un de mes caprices, ont voulu me faire plaisir en envoyant ce que je souhaitais.
+                            </p>
+                            
+                            <p xml:id="p10">Un je ne sais quoi ironique et triste passa par son beau visage en prononçant ces mots, et instinctivement, je sentis que cette existence de vanité me répugnait. Un je ne sais quoi ironique et triste passa par son beau visage en prononçant ces mots, et instinctivement, je sentis que cette existence de vanité me répugnait. </p>
+                            
+                            <p xml:id="p11">Durant les deux semaines où je restai à <placeName key="bogota">Bogota</placeName>, je fis constamment avec <persName key="aureliana">Aureliana</persName>, et au moment de dire au revoir, je vis une larme de sentiment briller entre ces cils bouclés. Malgré les hommages de toutes les grandes figures de la république, des fêtes qu'on lui offrait et des éloges qu'on lui prodiguait, l'admiration humble d'une paysanne avait éveillé en son cœur une affection sincère.</p>
+                            
+                            <p xml:id="p12">Quelques années plus tard, je me trouvais à <placeName key="tocaima" corresp="#coord_tocaima">Tocaima</placeName><geo xml:id="coord_tocaima">4.458200, -74.634340</geo>, auprès de mon père malade, quand on apprit que les Hernandez arriveraient dans les jours qui suivaient. Cela fut un événement pour tous les habitants du village. <persName key="aureliana">Aureliana</persName> était tombée malade. Quelle catastrophe ! On disait que le <persName key="presidente">président</persName> prêterait son attelage pour traverser <placeName key="laSabana" corresp="#coord_laSabana">la Sabana</placeName><geo xml:id="coord_laSabana">4.716667, -74.166664</geo> et que les meilleurs chevaux de la capitale étaient mis à sa disposition. À <placeName key="laMesa" corresp="#coord_laMesa">la Mesa</placeName><geo xml:id="coord_laMesa">4.632000, -74.463000</geo>, on lui prépara une litière, au cas où elle préférerait ce moyen de transport. Enfin, quand on apprit que la famille Hernández arriverait, les notables du village sortirent pour l’accueillir.</p>
+                            
+                            <p xml:id="p13">
+                                On leur avait attribué la meilleure maison de <placeName key="tocaima">Tocaima</placeName>, et tout le monde envoya tout ce qu’il pensait que la malade pourrait avoir besoin. Dès qu’<persName key="aureliana">Aureliana</persName> apprit que j’étais dans le village, elle me fit appeler avec mille expressions affectueuses. Je la trouvai pâle, mais belle comme d’habitude. Bien qu’elle fût accompagnée d’un cortège assez nombreux de jeunes filles et d’amies de <placeName key="bogota">Bogota</placeName>, elle appréciait beaucoup ma compagnie, et nous passions une grande partie de la journée ensemble.</p>
+                            
+                            <p xml:id="p14">Un soir, un bal fut organisé dans le village pour célébrer le rétablissement d'<persName key="aureliana">Aureliana</persName>, mais au moment de sortir, elle dit qu'elle ne se sentait pas suffisamment forte pour assister au bal et qu'elle resterait à la maison. Et en effet, elle m'envoya chercher pour que je l'accompagne cette soirée-là.</p>
+                            
+                            <p xml:id="p15">Je la trouvai seule dans une petite chambre qu'on avait préparée pour elle avec ce qu'il y avait de meilleur sur place. Une bougie, derrière un abat-jour, répandait sa douce lumière dans la chambre et, au milieu des ombres, se détachait la silhouette aérienne d'<persName key="aureliana">Aureliana</persName>, qui, revêtue capricieusement d'une robe populaire, laissait ses bras sculptés découverts et cachait partiellement son dos sous un tissu en linon blanc. Elle était allongée sur un hamac, la tête appuyée sur son bras plié. De l'autre main, elle caressait ses longues tresses de cheveux blonds qui contrastaient avec ses yeux bridés, noirs et brillants.</p>
+                            
+                            <p xml:id="p16">—  Bienvenue, <persName key="mercedes">Mercedes</persName> ! dit-elle languidement en me voyant. <persName key="madreDeAureliana">Ma mère</persName> et mes sœurs sont parties au bal, et je ne les ai pas accompagnées car je suis trop fatiguée pour penser à des divertissements.
+                                — Vous, fatiguée ? m’exclamai-je.
+                                — Et pourquoi pas ? Le fiel n’est-il pas toujours présent dans toute coupe de bonheur que nous vidons jusqu’au fond ?
+                                —Mais quelle poétesse êtes-vous devenue ce soir.
+                                —Ce n'est pas de moi, cette phrase me l’a apprise <persName key="gabriel">Gabriel</persName> l'écrivain, un de mes adorateurs.
+                                —Mais vous ne devriez pas même en plaisantant vous plaindre de votre sort. 
+                                — Je ne me plains pas. J'ai obtenu des autres tout ce que j'ai voulu… mais… 
+                                — Comment ça ? M’exclamai-je. Ne vous suffit-il pas encore tant d'adoration ; tant d'amour comme celui qui vous entoure ?
+                                — Assieds-toi à côté de moi, <persName key="mercedes">Mercedes</persName>, me dit-elle en me tutoyant soudainement : je ne sais pas pourquoi j’ai tant de prédilection pour toi. Puis elle ajouta à voix basse : peut-être est-ce parce que tu es la seule femme (je n’exclus même pas mes sœurs) qui ne s’est pas montrée envieuse de moi… Ah ! s’exclama-t-elle avec tristesse, qu’elles ont si peu de raison de l’être ! 
+                            </p>
+                            
+                            <p xml:id="p17">Je ne savais pas quoi lui répondre et je restai en silence.</p>
+                            
+                            <p xml:id="p18">— Dis-moi, ajouta-t-elle, sais-tu ce que c’est d’aimer ?</p>
+                            
+                            <p xml:id="p19">Je baissai les yeux sans répondre : je savais ce qu'était d’aimer mais ce sentiment, je le gardais dans mon cœur comme un secret.</p>
+                            
+                            <p xml:id="p20">
+                                — Tu ne me réponds pas ? … Ce n'est pas une question vaine ni une curiosité féminine, je veux savoir la vérité… Je voudrais comprendre ce qu'il y a dans un autre cœur… 
+                                — Il y a deux ans, répondis-je, que je suis fiancée, et cela n’a jamais été un fardeau. Cela vous suffira pour comprendre que je sais ce qu'est d’aimer.
+                                — Tu es plus heureuse que moi alors, répondit-elle en posant affectueusement sa main sur la mienne. Je n’ai jamais pu vraiment aimer. Voilà la blessure secrète de mon âme. J’ai près de trente ans, et je ne sais pas ce que signifie aimer avec le cœur, avec abnégation, avec tendresse ! Ma vanité fut flattée mille fois, mon imagination s’est enflammée ; mais mon cœur n’a jamais su, ni pu, aimer sincèrement. Jamais je n’ai tout oublié pour l’être aimé : je n’ai jamais trouvé de paix ni de bonheur complet auprès d’un seul. On me dit qu’aimer, c’est vivre en pensant sans cesse à l’être chéri, en l’associant à chaque instant de notre vie, son nom étant le premier mot au réveil, et lui, notre dernière pensée avant de nous endormir… Aimer doit être comme vivre dans un monde à part, où l’on ressent des émotions ineffables de suprême tendresse… Dis-moi, est-ce ainsi que tu aimes ?
+                                — Vous avez décrit mes sentiments les plus profonds. Cependant, ajoutai-je, aimer est aussi souffrir. N’êtes-vous pas plus heureuse avec votre tranquillité ?
+                                — Non, ma fille : il y a plus de bonheur à aimer qu'à être aimé, m'a dit beaucoup de fois <persName key="vicente">Vicente</persName> le poète et je le crois. J'avais à peine quatorze ans quand j'ai compris pour la première fois que ma beauté inspirait l'amour et accablait. Enchantée, j'ai cru lui correspondre pendant quelques jours, pauvre <persName key="mariano">Mariano</persName> ! L'illusion passa quand un autre de meilleure allure s'est rapproché de moi. J'ai cru m'être trompée dans ma première liaison et je l'ai rejetée pour accueillir la deuxième. Mais la même histoire se produit avec celle-ci et les autres. À ce moment-là, je connaissais l'importance de chacun de mes mots, même le plus insignifiant ; de mes regards même les plus vagues ; et je te l'avoue, je suis devenue une coquette avec un cœur vide et une imagination ardente – la société entière était tombée à mes pieds : aucune femme ne pouvait rivaliser avec moi. Les mots d'adoration que j'entendais ne causaient aucune impression à mon cœur : je le recevais avec froideur, mais j'y répondais avec une fausse tendresse.
+                                </p>
+                            <signed>ALDÉBARAN.</signed>
+                            </div>
+                            
+                            <div type="deuxieme_livraison" rend="Conclusion">
+                            
+                                <head>
+                                    <l>LA LUMIÈRE ET L’OMBRE.</l>
+                                    <l>(Suite)</l>
+                                </head>
+                            
+                                <p xml:id="p21">Instinctivement, je m’éloignai d’<persName key="aureliana">Aureliana</persName>. Cette femme si froide et si belle m’horrifiait. Son cœur semblait une de ces montagnes enneigées dont le sommet n’a jamais été atteint par les voyageurs.</p>
+                                
+                                <p xml:id="p22">
+                                    — Une fois, poursuivit-elle sans prêter attention à mon geste de répulsion, 
+                                    j’ai compris qu’au sein du cercle d’admirateurs qui m’entourait, 
+                                    il y avait <seg corresp="#fernando">un jeune homme qui critiquait ma manière d’être et 
+                                    qui ne ressentait aucune admiration pour moi</seg>. 
+                                    Cela m’a d’abord choquée, puis finalement blessée. 
+                                    <seg corresp="#fernando"><persName key="fernando">Fernando</persName>, c’était son nom, 
+                                    se montrait toujours sérieux et sévère avec moi, et il eut même 
+                                    parfois l’audace de me critiquer ouvertement. Sa froideur et 
+                                    ses reproches me causèrent tant de déplaisir que je décidai 
+                                    de le conquérir coûte que coûte</seg>. <seg corresp="#aureliana">Sans le lui manifester clairement, 
+                                    je déployai tous mes charmes, me montrant si attentionnée 
+                                    que je vis bientôt que mes efforts avaient eu un effet sur lui</seg>. 
+                                    Mais bien que <seg corresp="#fernando">ses manières fussent celles d’un homme galant, 
+                                    il ne se manifestait pas épris</seg>. <seg corresp="#fernando">« S’il ne succombe pas », pensai-je, 
+                                    « c’est un homme supérieur et digne d’un véritable amour ». 
+                                    Pourtant, <persName key="fernando">Fernando</persName> ne cherchait pas 
+                                    particulièrement ma compagnie, même s’il ne me blâmait plus comme auparavant, 
+                                    et il osait de parler devant moi de la beauté d’autres femmes</seg>. 
+                                    Malheureusement, <seg corresp="#aureliana">mon caractère est inconstant, et mon enthousiasme, 
+                                    qui ne dure qu’un instant, cède devant la moindre difficulté. 
+                                    Je n’aurais pas voulu le voir à mes pieds, 
+                                    mais mon amour-propre ne supportait pas qu’il admirait d’autres femmes</seg>. 
+                                    Entre-temps, de nouvelles conquêtes et distractions captèrent mon attention, 
+                                    et j’oubliai ce noble projet, à peine formé, 
+                                    de savourer un amour secret, même s’il n’était pas réciproque. 
+                                    — Mais quel caractère étrange vous avez ! 
+                                    Mais continuez, qu'est-il arrivé à <persName key="fernando">Fernando</persName> ?
+                                    — Tu vas l’entendre. Il y a quelques mois, 
+                                    le Libertador a donné un bal dans une villa située 
+                                    aux environs de <placeName key="bogota">Bogota</placeName>. 
+                                    La nuit était splendide, et la lune éclairait les jardins. 
+                                    Fatiguée du bruit et désireuse de me retrouver seule 
+                                    pour lire une lettre qu’on m’avait remise mystérieusement, 
+                                    je me suis éclipsée de la maison sans être vue, 
+                                    et je me suis dirigée vers un pavillon situé au fond du jardin, 
+                                    où je savais que je trouverais à la fois lumière et solitude. 
+                                    Enveloppée dans un épais châle qui me protégeait du froid nocturne, 
+                                    j’ai traversé rapidement le jardin et emprunté un sentier ombragé 
+                                    par des arbustes, traversé par un ruisseau 
+                                    qui descendait bruyamment de la colline voisine. 
+                                    Le contraste entre le tumulte, les lumières, la musique, 
+                                    et l’agitation du bal avec le paysage calme que je traversais, 
+                                    me plongea dans une étrange mélancolie, inhabituelle pour moi.
+                                    Une lampe suspendue au plafond éclairait le pavillon : en y arrivant, 
+                                    je me laissai tomber sur un canapé, et un soupir m’échappa. 
+                                    Un autre soupir résonna en écho près de moi. 
+                                    En me tournant vers la porte, j’aperçus un homme debout. 
+                                    <seg corresp="#aureliana">Mécontente de cet espionnage importun, 
+                                    j’étais sur le point de réprimander celui qui avait troublé ma solitude</seg>,
+                                    lorsque, <seg corresp="#fernando">en ôtant son manteau, il révéla le visage pâle et fascinant 
+                                    de <persName key="fernando">Fernando</persName></seg>.
+                                </p>
+                                
+                                <p xml:id="p23">— <persName key="fernando">Fernando</persName>, dis-je, c'est vous ?
+                                    — Vous avez raison d'être surprise Auréliana : 
+                                    vous ne deviez pas me retrouver ici, dit-il ; 
+                                    et en me prenant la main qu’instinctivement je lui tendais, 
+                                    il imprima ses lèvres sur elle. 
+                                    Pourquoi lutter encore ? ajouta-t-il en s'asseyant à mes côtés. 
+                                    Pourquoi faire semblant d'être désintéressé quand 
+                                    je ne peux que vous adorer ?
+                                </p>
+                                
+                                <p xml:id="p24">Je ne sais pas si le cœur de toutes les femmes est égal au mien, mais au lieu de me sentir chanceuse de cette conquête que j’avais désirée antérieurement, mon cœur resta tranquille et indifférent. La désillusion la plus profonde m’envahit quand je compris que je n'étais pas capable d'aimer le seul homme que j'avais tant admiré et au lieu de lui répondre comme j'aurais fait à n'importe quel autre, je baissai la tête en silence et avec amertume je pensai que tous les hommes étaient égaux vu qu'il suffisait de flatter leur vanité pour les voir vaincus.</p>
+                                
+                                <p xml:id="p25"><persName key="fernando">Fernando</persName> me raconta alors l’histoire de son amour. Il me confia que lorsqu’il m’avait rencontrée, il avait d’abord ressenti une certaine répulsion et de la haine envers moi, et qu’il regardait avec dédain tous ceux qui s’humiliaient devant moi. Mais le désir que je lui avais manifesté d’écouter ses conseils et de lui plaire, au lieu de m’offenser pour ses censures, l’avait surpris. Peu à peu, sa haine s’était muée en une véritable affection, puis en un amour violent. Dégoûté et humilié, comprenant qu’il n’avait pas la force de se défendre, il avait lutté longtemps pour vaincre son inclination. Enfin, il décida de me fuir et demanda qu’une lettre me soit remise cette soirée-là. C’était un tendre adieu.</p>
+                                
+                                <p xml:id="p26">Je réussis à faire que <persName key="fernando">Fernando</persName> ne partît pas. Je désirais éveiller dans mon cœur cet intérêt que je croyais ressentir pour lui pendant un certain temps. Aimer doit être si beau ! Bientôt <persName key="fernando">Fernando</persName> lui-même découvrit que je cherchais à me mentir à moi-même et que je ne pourrais jamais l'aimer. Cependant, je sentais perdre un cœur si noble et je voulus le convaincre que je l'aimais mais il ne se mentit pas à lui-même, et il prit congé résigné et triste, bien qu'il ne se montrât pas blessé dans son amour-propre. Il y a un mois, j’appris qu'il était mort à <placeName key="cartagena" corresp="#coord_cartagena">Carthagène</placeName><geo xml:id="coord_cartagena">10.399720, -75.514440</geo> lors d'un duel à cause de moi, en me défendant des calomnies que propageait contre moi un officier que j'avais dédaigné. Cette mort me cause parfois des remords. Mais ce n'est pas ma faute si je ne pouvais pas l'aimer ! Je ne lui ai jamais dit que je ne lui correspondais pas…</p>
+                                
+                                <p xml:id="p27">— La voilà l'erreur ! 
+                                    — Peut-être ; car il me disait que mes regards et mes expressions d'affection lui avaient fait concevoir des espoirs et il croyait par moments que je ne le regardais pas avec indifférence. Sans cette idée-là, il ne m'aurait jamais aimée.
+                                    — Pauvre homme ! m’exclamai-je. Malchanceux celui qui vous aime.
+                                    — Ne dis pas ça, me répondit Auréliana avec amertume. Celui qui aime est récompensé par le doux sentiment qui l’anime. Parfois, je me sentis inspirée par des éclairs, malheureusement passagers, d’une tendresse qui a gonflé mon cœur, ennobli mon âme et rempli mon esprit de belles pensées. Mais combien ces instants ont été courts ! J’ai passé mes journées à chercher avec persévérance l’amour, le seul véritable objet de la vie d’une femme, mais à sa place, je n’ai trouvé que des désillusions et du vide. Ne crois pas que la coquetterie dont on m’accuse, peut-être à juste titre, soit le fruit d’un cœur perverti ; ne le crois pas : c’est que je cherche partout un idéal qui m’échappe inlassablement.
+                                </p>
+                                
+                                <p xml:id="p28">Le langage choisi, même s'il manquait d'une vraie profondeur mais qui distinguait <persName key="aureliana">Aureliana</persName>, la rendait extrêmement agréable cependant elle ne parlait que d'elle-même de manière éloquente. </p>
+                                
+                                <p xml:id="p29">Parfois, l'écho lointain de la musique du bal auquel <persName key="aureliana">Aureliana</persName> avait refusé de participer arrivait jusqu'à nos oreilles. Elle sortit sa montre à gousset (un objet rare à cette époque-là) qui pendait d'une grosse chaîne qu'elle avait autour de son cou. Il était minuit.</p>
+                                
+                                <p xml:id="p30">— Cette nuit, je ne pourrai pas dormir, dit-elle en soupirant. La conversation que nous avons eue m'a causé une énorme tristesse et m'a rappelé des scènes que je voudrais oublier. <persName key="fernando">Fernando</persName> n'est pas le seul qui s'est perdu à cause de moi.</p>
+                                
+                                <p xml:id="p31">Mes sœurs et mes amies seront joyeuses et triomphantes sans ma présence à cette soirée ! s’exclama-t-elle un moment après, en se mettant debout et en se regardant dans un miroir qu'elle avait au niveau des oreillers sur son lit. Il aurait été mieux de passer notre temps au bal. Tu veux y aller ? … Quoi ! ajouta-t-elle, en voyant le sérieux avec lequel j’accueillais une proposition si insensée. Quoi !  Tu t'es laissé impressionner par ma causette sentimentale ? Bah ! Ça, c'est passager. Viens au bal !</p>
+                                
+                                <p xml:id="p32">— Moi, me présenter à cette heure ? Impossible. 
+                                    — Nous demanderons à quelqu'un de nous accompagner. 
+                                    — Je ne peux pas, je ne veux pas. Pardonnez-moi mais…
+                                    — Je ne veux pas t'obliger, répondit-elle. 
+                                    <seg corresp="#aureliana">Moi, j’irai, mon système consiste à 
+                                    ne jamais me laisser emporter par la tristesse, 
+                                    et à tout prix, la combattre</seg>. 
+                                </p>
+                                
+                                <p xml:id="p33">Elle ne voulut porter aucun ornement. Elle lâcha sa blonde chevelure, elle mit un lacet bleu autour de sa tête, elle s’enveloppa gracieusement dans un châle de la même couleur et appelant <persName key="negroEsclavo">un esclave noir</persName>, elle lui demanda d'appeler quelqu'un qui vînt l’accompagner au bal. </p>
+                                
+                                <p xml:id="p34">Tandis que les galants anxieux arrivaient pour obéir à son ordre, elle me fit allonger sur le lit et elle prit affectueusement congé à son départ. Je restai terrifiée des révélations qu'elle m'avait faites, et étonnée des caprices de cette femme si bizarre et... si malheureuse.</p>
+                                
+                                <p xml:id="p35">Après quelques jours, la famille Hernandez retourna à <placeName key="bogota">Bogota</placeName> ; et près de trente années se passèrent sans que je revoie <persName key="aureliana">Aureliana</persName> ou que je n'en aie que de vagues nouvelles auxquelles je n'ai pas fait attention.
+                                    
+                                </p>
+                                <signed>ALDÉBARAN</signed>
+                            
+                            </div>
+                            
+                        <div type="laVieillesse">
+                            <div type="troisieme_livraison" rend="Fin">
+                                <head>
+                                    <l>LA LUMIÈRE ET L’OMBRE</l>
+                                    <l>(Conclusion)</l>
+                                    <l>II.</l>
+                                    <l>LA VIEILLESSE.</l>
+                                </head>
+                            
+                                <p xml:id="p36"><seg corresp="#mercedes">Je me mariai, mes enfants grandirent et à leur tour, ils m’entourèrent de petits-enfants</seg>.</p>
+                                
+                                <p xml:id="p37"><seg corresp="#mercedes">Je voyais ma jeunesse au loin, comme un rêve évanoui, mais j’étais satisfaite de mon humble destinée</seg>.</p>
+                                
+                                <p xml:id="p38">Un après-midi, <seg corresp="#mercedes">je me reposais assise à la porte de ma maison.
+                                    La journée avait été très chaude, 
+                                    rendant l’ombre des arbres d’autant plus désirable, 
+                                    et rafraîchissant ma chambre joyeuse</seg>. 
+                                    Soudain, je vis sortir de l’auberge du village 
+                                    <seg corresp="#aureliana">une dame âgée, courbée par les années et les maux, s’appuyant sur le bras d’<persName key="negroEsclavo">un vieil homme noir</persName></seg>. Après avoir hésité un instant, suivant la direction qu’il lui indiquait, elle se dirigea vers moi avec une extrême lenteur et difficulté.</p>
+                                
+                                <p xml:id="p39">Quand elle arriva à l’endroit où j’étais, elle s’arrêta et, d’une voix faible et triste, me dit :</p>
+                                
+                                <p xml:id="p40">— Me connais-tu, <persName key="mercedes">Mercedes</persName> ?
+                                    — Non, je ne me souviens pas…
+                                    — Mais peut-être tu n’aurais pas oublié <persName key="aureliana">Aureliana Hernández</persName>, n’est-ce pas ?
+                                    — <persName key="aureliana">La señora Aureliana</persName> ! Est-ce possible ?
+                                    — C’est moi !                                </p> 
+                                
+                                <p xml:id="p41">Je la regardai, pleine de stupéfaction. <seg corresp="#aureliana">Il ne restait plus la moindre trace de sa singulière beauté</seg>. Elle semblait avoir plus de soixante-dix ans : sa peau, ridée par les artifices de beauté et peut-être aussi par les souffrances, était ridée et jaunâtre ; ses yeux, si brillants dans sa jeunesse, étaient maintenant troubles et rougis ; son corps voûté et sa démarche lente et laborieuse indiquaient que les peines d’une longue maladie l’avaient vieillie encore plus que le poids des années.</p>
+                                
+                                <p xml:id="p42">Immédiatement, je la fis entrer et, 
+                                    me souvenant de l’affection qu’elle m’avait 
+                                    témoignée autrefois, je lui prodiguai tous 
+                                    les soins possibles, cherchant à lui faire oublier 
+                                    l’isolement dans lequel je la trouvais. 
+                                    Je n’osais pas lui demander des nouvelles de sa famille, 
+                                    qui l’abandonnait ainsi dans la vieillesse, elle, 
+                                    qui avait été <seg corresp="#aureliana">si admirée dans sa jeunesse</seg>.</p>
+                                
+                                <p xml:id="p43">Demandant la raison qui l’avait amenée à <placeName key="lugarOculto">***</placeName>, elle me répondit :</p>
+                                
+                                <p xml:id="p44">— Mes maladies, et l’ordre des médecins.
+                                    — Et votre famille est à <placeName key="bogota">Bogota</placeName> ?
+                                    — Oui, ils y sont tous.
+                                    — Et <persName key="hijaDeAureliana">votre fille</persName>, pourquoi ne vous accompagne-t-elle pas ?
+                                    — <seg corresp="hijaDeAureliana">La pauvre, dit-elle avec un sourire de résignation, est sur le point de se marier, et ce n’était pas juste qu’elle abandonne son fiancé pour venir auprès d’une invalide comme moi</seg>.
+                                    — Et <persName key="esposoDeAureliana">Monsieur N***</persName>, votre époux ?
+                                    — <seg corresp="#esposoDeAureliana">Le climat chaud lui est néfaste</seg>.
+                                    — Et vos deux fils ?
+                                    — <seg corresp="#hijosVaronesDeAureliana">Leurs affaires ne leur permettent pas de venir à la campagne</seg>. Mais celui qui est venu m’accompagner, c’est <persName key="negroEsclavo">le Noir</persName>, <persName key="negroEsclavo">le même esclave</persName> que tu avais connu chez moi, et le seul qui comprenne et supporte mes caprices. Lui, il n’a jamais voulu m’abandonner malgré sa liberté.
+                                </p>
+                                
+                                <p xml:id="p45">Un ancien esclave loyal était le seul et l’unique soutien qui lui restait, à cette femme autrefois tant célébrée. Mon cœur se serrait en l’entendant, et mes yeux s’emplirent de larmes en contemplant une vieillesse si triste après une jeunesse si brillante.</p>
+                                
+                                <p xml:id="p46"><persName key="aureliana">Aureliana</persName> passa un mois chez moi, entourée de soins, me dit-elle, comme elle ne l’avait pas été depuis longtemps. Les longues conversations que nous eûmes me firent comprendre que la seconde partie de sa vie avait été une terrible expiation de la vanité folle de la première. Petit à petit, elle me révéla les secrets les plus douloureux de sa vie.</p>
+                                
+                                <p xml:id="p47"><seg corresp="#aureliana">Mariée à la fin de sa jeunesse à un homme 
+                                    qu’elle n’aimait pas</seg> et <seg corresp="#esposoDeAureliana">qui ne l’aimait pas</seg>, 
+                                    elle découvrit bientôt qu’<seg corresp="#esposoDeAureliana">il n’avait cherché 
+                                    qu’à profiter de sa richesse</seg>. 
+                                    <seg corresp="#aureliana">Elle s’aperçut avec effroi que sa beauté 
+                                    disparaissait progressivement. Sans éducation 
+                                    approfondie, sans aucune instruction, elle perdit 
+                                    cette beauté qui était son seul atout</seg>, 
+                                    et ses admirateurs l’abandonnèrent peu à peu. 
+                                    <seg corresp="#aureliana">Elle voyait avec inquiétude que sa présence 
+                                    ne suscitait plus d’émotion et que les regards 
+                                    des invités aux fêtes où elle se rendait ne se posaient plus sur elle. 
+                                    Désireuse alors de quitter le théâtre de ses premiers triomphes, 
+                                    elle accompagna son époux avec plaisir 
+                                    aux <placeName key="estadosUnidos" corresp="#coord_estadosUnidos">États-Unis</placeName><geo xml:id="coord_estadosUnidos">38.000000, -97.000000</geo>, 
+                                    mais là-bas, elle se sentit encore plus méprisée. 
+                                    Désespérée, elle s’efforça par tous les moyens 
+                                    de retrouver sa beauté perdue et passait de 
+                                    longues heures devant son miroir, se parant de 
+                                    tout l’art qu’une expérience consommée lui avait enseigné. 
+                                    Par moments, son miroir lui renvoyait l’image de 
+                                    l’<persName key="aureliana">Aureliana</persName> de sa jeunesse, 
+                                    et emplie d’illusions et d’espoir, elle se 
+                                    présentait aux fêtes et aux bals</seg>… Mais les autres 
+                                    la regardaient comme on regarde une ruine blanchie et repeinte. 
+                                    D’autres, pas très belles mais plus jeunes, remportaient la palme.</p>
+                                
+                                <p xml:id="p48"><seg corresp="#aureliana">Combien étaient les désillusions si cruelles
+                                    de cette pauvre femme qui avait fondé sa vie sur ses attraits 
+                                    personnels ! Elle traversait des moments d’abattement où 
+                                    elle priait Dieu de la faire mourir plutôt que de cesser d’être admirée</seg>.</p>
+                            
+                                <p xml:id="p49"><seg corresp="#aureliana">Dans ces luttes, dans cet acharnement, 
+                                    elle passa plusieurs années avant de finir par 
+                                    se convaincre de l’inutilité de ses efforts. 
+                                    Les eaux, les fards et les cosmétiques avec 
+                                    lesquels elle tenta de raviver sa fraîcheur 
+                                    perdue anéantirent les restes de ses couleurs 
+                                    et ternirent la blancheur de son teint ; les maladies 
+                                    éteignirent prématurément l’éclat de ses yeux et détruisirent 
+                                    sa belle chevelure, et, par surcroît, les larmes, les désillusions 
+                                    et les peines domestiques ravagèrent le dernier vestige de sa beauté singulière.</seg></p>
+                                
+                                <p xml:id="p50">Lorsque ses enfants étaient <seg corresp="#hijosEHijaDeAureliana">petits, ils avaient été abandonnés par <persName key="aureliana">leur mère</persName></seg>, 
+                                    qui <seg corresp="#aureliana">courait après ses derniers triomphes ; et ainsi, 
+                                    elle perdit cette première affection filiale si pure et si belle</seg>. 
+                                    D’ailleurs, <seg corresp="#esposoDeAureliana">les paroles dédaigneuses de <persName key="esposoDeAureliana">Monsieur N***</persName> avaient fait naître dans le cœur de leurs enfants un sentiment d’indifférence complète envers <persName key="aureliana">leur mère</persName> mal aimée et peu respectée</seg>.</p> 
+                                
+                                <p xml:id="p51">Quand enfin <persName key="aureliana">Aureliana</persName> <seg corresp="#aureliana">se convainquit que 
+                                    ses derniers crépuscules de vanité mondaine étaient finis, elle se retourna vers les enfants</seg>, 
+                                    mais <seg corresp="#hijosEHijaDeAureliana">ils reçurent avec contrariété ses expressions d'affection, ils crurent qu'il s'agissait 
+                                    d'un des nombreux caprices passagers dont leur père l'accusait au quotidien et remplis de froideur, ils n'y ont pas fait attention</seg>.</p> 
+                                
+                                <p xml:id="p52"><persName key="aureliana">Aureliana</persName> était en effet <seg corresp="#aureliana">impertinente et capricieuse, le résultat naturel 
+                                    et inévitable de sa mauvaise éducation et de la vie qu'elle avait menée durant sa jeunesse. 
+                                    Pour se consoler de ses malheurs présents, elle ne cessait de parler de sa beauté passée et des 
+                                    triomphes de sa jeunesse, ajoutant ainsi à la vacuité de ses idées une loquacité ridicule, et 
+                                    ruinant ainsi son caractère maternel comme sa beauté de courtisane</seg>.</p> 
+                                
+                                <p xml:id="p53"><seg corresp="#aureliana">Souffrant continuellement de maladies, sa famille l'envoya changer de climat, accompagnée 
+                                    seulement du <persName key="negroEsclavo">Noir</persName>. Après avoir été adorée dans sa jeunesse par 
+                                    tous ceux qui l'approchaient, après s'être habituée à ce que tout le monde s'inclinât devant le moindre 
+                                    de ses caprices et à ce que le moindre de ses malaises fût une calamité publique, à présent, véritablement 
+                                    malade et affaiblie, elle se voyait abandonnée, même par ceux qui avaient le devoir de lui assurer un certain confort</seg>.</p> 
+                                
+                                <p xml:id="p54"><seg corresp="#aureliana"><persName key="aureliana">Aureliana</persName> mourut il y a peu de temps à <placeName key="bogota">Bogota</placeName>, oubliée et pleurée de personne</seg>. 
+                                    On m'a dit qu'<seg corresp="#aureliana">au milieu de ses souffrances, elle parlait encore de ses anciens triomphes et de sa beauté. La vanité et les souvenirs mondains de ses premières années l'accompagnèrent jusqu'aux portes de la tombe, dont la proximité ne lui inspira aucune pensée sérieuse. Elle mourut comme elle avait vécu : sans jamais songer à son âme</seg>, peut-être même en ignorant qu'elle en avait une !</p> 
+                                
+                                <p xml:id="p55">Cet épisode m’a été rapporté il y a peu par <persName key="venerableMatrona">une vénérable matrone</persName> de <placeName key="lugarOculto">***</placeName> et m’a prouvé une fois de plus combien une éducation soignée et une instruction saine sont indispensables à la femme : elles enrichissent son esprit, adoucissent ses désillusions et lui apprennent à mépriser les vanités de la vie. Les commentaires et réflexions sont ici inutiles : la leçon se comprend d’elle-même à travers ces faits, bien trop vrais pour l’honneur de ce que nous appelons, à la française, « la société de bon ton ».</p>
+                                
+                                <signed>ALDÉBARAN.</signed>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+        </body>
+    </text>
+</TEI>
